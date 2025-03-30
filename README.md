@@ -1,4 +1,4 @@
-# Shoppinhauer
+# Shoppinghauer
 Shopping list.
 
 ## Dependencies

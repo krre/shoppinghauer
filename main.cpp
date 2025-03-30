@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
 
-    engine.loadFromModule("shoppinhauer", "Main");
+    engine.loadFromModule("shoppinghauer", "Main");
 
     return app.exec();
 }

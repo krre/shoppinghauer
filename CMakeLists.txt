@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(shoppinhauer VERSION 0.1 LANGUAGES CXX)
+project(shoppinghauer VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -13,7 +13,7 @@ qt_add_executable(${PROJECT_NAME}
 )
 
 qt_add_qml_module(${PROJECT_NAME}
-    URI shoppinhauer
+    URI shoppinghauer
     VERSION 1.0
     QML_FILES
         Main.qml
@@ -29,8 +29,8 @@ add_custom_target(other
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    OUTPUT_NAME "Shoppinhauer"
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appshoppinhauer
+    OUTPUT_NAME "Shoppinghauer"
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appshoppinghauer
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
