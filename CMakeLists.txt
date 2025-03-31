@@ -8,6 +8,8 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
+configure_file(cpp/config.h.in config.h @ONLY)
+
 qt_add_executable(${PROJECT_NAME}
     cpp/main.cpp
 )
