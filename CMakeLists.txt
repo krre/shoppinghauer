@@ -3,10 +3,11 @@ cmake_minimum_required(VERSION 3.16)
 project(shoppinghauer VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(REQUIRED_QT_VERSION 6.8)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick)
 
-qt_standard_project_setup(REQUIRES 6.8)
+qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
