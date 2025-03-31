@@ -8,6 +8,8 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
 configure_file(cpp/config.h.in config.h @ONLY)
 
 qt_add_executable(${PROJECT_NAME}
@@ -17,8 +19,12 @@ qt_add_executable(${PROJECT_NAME}
 qt_add_qml_module(${PROJECT_NAME}
     URI shoppinghauer
     VERSION 1.0
+
     QML_FILES
         qml/Main.qml
+
+    SOURCES
+        cpp/core/Application.cpp cpp/core/Application.h
 )
 
 # For visibility in IDE (e.g., Qt Creator)

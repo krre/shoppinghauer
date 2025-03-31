@@ -4,7 +4,7 @@ Window {
     width: 400
     height: 770
     visible: true
-    title: qsTr("Shoppinghauer")
+    title: app.name
 
     Component.onCompleted: {
         x = (Screen.desktopAvailableWidth - width) / 2
