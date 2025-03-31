@@ -16,7 +16,7 @@ qt_add_qml_module(${PROJECT_NAME}
     URI shoppinghauer
     VERSION 1.0
     QML_FILES
-        Main.qml
+        qml/Main.qml
 )
 
 # For visibility in IDE (e.g., Qt Creator)
