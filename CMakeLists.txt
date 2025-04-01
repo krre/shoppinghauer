@@ -5,7 +5,7 @@ project(shoppinghauer VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(REQUIRED_QT_VERSION 6.8)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
 
@@ -19,13 +19,16 @@ qt_add_executable(${PROJECT_NAME}
 
 qt_add_qml_module(${PROJECT_NAME}
     URI shoppinghauer
-    VERSION 1.0
+    NO_RESOURCE_TARGET_PATH
 
     QML_FILES
         qml/Main.qml
 
     SOURCES
         cpp/core/Application.cpp cpp/core/Application.h
+
+    RESOURCES
+        qtquickcontrols2.conf
 )
 
 # For visibility in IDE (e.g., Qt Creator)
@@ -48,6 +51,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE Qt6::Quick
+    Qt6::QuickControls2
 )
 
 include(GNUInstallDirs)
