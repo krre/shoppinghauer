@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
-Window {
+ApplicationWindow {
     width: 400
     height: 770
     visible: true
@@ -12,9 +13,20 @@ Window {
         y = (Screen.desktopAvailableHeight - height) / 2
     }
 
+    header: ToolBar {
+        RowLayout {
+            anchors.fill: parent
+        }
+    }
+
     Action {
         id: quitAction
         shortcut: "Ctrl+Q"
         onTriggered: Qt.quit()
+    }
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
     }
 }
