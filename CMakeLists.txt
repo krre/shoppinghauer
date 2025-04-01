@@ -11,10 +11,10 @@ qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-configure_file(cpp/config.h.in config.h @ONLY)
+configure_file(src/config.h.in config.h @ONLY)
 
 qt_add_executable(${PROJECT_NAME}
-    cpp/main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(${PROJECT_NAME}
@@ -25,7 +25,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/Main.qml
 
     SOURCES
-        cpp/core/Application.cpp cpp/core/Application.h
+        src/core/Application.cpp src/core/Application.h
 
     RESOURCES
         qtquickcontrols2.conf
