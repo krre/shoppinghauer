@@ -2,4 +2,4 @@
 Shopping list.
 
 ## Dependencies
-- Qt 6.8
+- Qt 6.9
