@@ -34,6 +34,7 @@ qt_add_qml_module(${PROJECT_NAME}
 # For visibility in IDE (e.g., Qt Creator)
 add_custom_target(other
     SOURCES
+    src/config.h.in
     README.md
 )
 
