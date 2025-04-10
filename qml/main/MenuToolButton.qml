@@ -7,7 +7,7 @@ ToolButton {
 
     action: Action {
         id: optionsMenuAction
-        text: qsTr("Menu")
+        icon.source: "qrc:/assets/icons/dots-vertical.svg"
         onTriggered: optionsMenu.open()
     }
 

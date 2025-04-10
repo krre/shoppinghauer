@@ -30,6 +30,7 @@ qt_add_qml_module(${PROJECT_NAME}
         src/core/Application.cpp src/core/Application.h
 
     RESOURCES
+        assets/icons/dots-vertical.svg
         qtquickcontrols2.conf
 )
 
