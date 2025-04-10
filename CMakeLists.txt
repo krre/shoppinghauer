@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.0)
 
-project(shoppinghauer VERSION 0.1 LANGUAGES CXX)
+project(shoppinghauer VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(REQUIRED_QT_VERSION 6.9)
