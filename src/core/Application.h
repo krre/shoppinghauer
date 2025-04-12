@@ -31,4 +31,6 @@ private:
     QString years() const { return Years; }
     QString buildDate() const { return BuildDate; }
     QString buildTime() const { return BuildTime; }
+
+    void installTranslators();
 };

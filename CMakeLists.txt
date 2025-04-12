@@ -5,7 +5,7 @@ project(shoppinghauer VERSION 0.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(REQUIRED_QT_VERSION 6.9)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 
 qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
 
@@ -32,6 +32,14 @@ qt_add_qml_module(${PROJECT_NAME}
     RESOURCES
         assets/icons/dots-vertical.svg
         qtquickcontrols2.conf
+)
+
+SET(TS_SOURCE assets/i18n/${PROJECT_NAME}-ru.ts)
+
+qt_add_translations(${PROJECT_NAME}
+    TS_FILES ${TS_SOURCE}
+    SOURCE_TARGETS ${PROJECT_NAME}
+    # LUPDATE_OPTIONS -no-obsolete
 )
 
 # For visibility in IDE (e.g., Qt Creator)
