@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
         QCoreApplication::exit(EXIT_FAILURE);
     }, Qt::QueuedConnection);
 
-    engine.loadFromModule("shoppinghauer", "Main");
+    engine.loadFromModule(PROJECT_NAME, "Main");
 
     return app.exec();
 }
