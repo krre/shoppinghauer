@@ -26,11 +26,18 @@
     </message>
 </context>
 <context>
-    <name>OptionsMenuToolButton</name>
+    <name>OptionsMenu</name>
     <message>
-        <location filename="../qml/main/OptionsMenuToolButton.qml" line="19"/>
+        <location filename="../qml/main/OptionsMenu.qml" line="8"/>
         <source>About</source>
         <translation type="unfinished">О программе</translation>
+    </message>
+</context>
+<context>
+    <name>OptionsMenuToolButton</name>
+    <message>
+        <source>About</source>
+        <translation type="obsolete">О программе</translation>
     </message>
 </context>
 </TS>
