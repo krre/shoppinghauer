@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import "main"
-import "dialogs"
 
 ApplicationWindow {
     id: root

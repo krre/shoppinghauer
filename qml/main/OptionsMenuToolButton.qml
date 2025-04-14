@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import "../dialogs"
 
 ToolButton {
     Material.foreground: "#f0f0f0"

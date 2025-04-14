@@ -4,12 +4,12 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/dialogs/AboutDialog.qml" line="9"/>
+        <location filename="../qml/main/AboutDialog.qml" line="9"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/dialogs/AboutDialog.qml" line="17"/>
+        <location filename="../qml/main/AboutDialog.qml" line="17"/>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;
                     Shopping list&lt;br&gt;&lt;br&gt;
                     Based on Qt %3&lt;br&gt;
@@ -28,7 +28,7 @@
 <context>
     <name>OptionsMenuToolButton</name>
     <message>
-        <location filename="../qml/main/OptionsMenuToolButton.qml" line="20"/>
+        <location filename="../qml/main/OptionsMenuToolButton.qml" line="19"/>
         <source>About</source>
         <translation type="unfinished">О программе</translation>
     </message>
