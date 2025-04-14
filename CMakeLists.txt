@@ -37,6 +37,8 @@ qt_add_qml_module(${PROJECT_NAME}
 
     RESOURCES
         assets/icons/dots-vertical.svg
+        assets/icons/arrow-left.svg
+        assets/icons/menu.svg
         qtquickcontrols2.conf
 )
 

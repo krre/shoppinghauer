@@ -40,7 +40,7 @@ ApplicationWindow {
 
     Action {
         id: navigateAction
-        text: stackView.depth > 1 ? "Back" : "Menu"
+        icon.source: stackView.depth > 1 ? "qrc:/assets/icons/arrow-left.svg" : "qrc:/assets/icons/menu.svg"
 
         onTriggered: {
             if (stackView.depth > 1) {
