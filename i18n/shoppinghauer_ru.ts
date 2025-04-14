@@ -19,10 +19,11 @@
     </message>
 </context>
 <context>
-    <name>MenuToolButton</name>
+    <name>NavigationMenu</name>
     <message>
-        <source>About</source>
-        <translation type="vanished">О программе</translation>
+        <location filename="../qml/main/NavigationMenu.qml" line="12"/>
+        <source>Exit</source>
+        <translation>Выход</translation>
     </message>
 </context>
 <context>
@@ -30,14 +31,7 @@
     <message>
         <location filename="../qml/main/OptionsMenu.qml" line="8"/>
         <source>About</source>
-        <translation type="unfinished">О программе</translation>
-    </message>
-</context>
-<context>
-    <name>OptionsMenuToolButton</name>
-    <message>
-        <source>About</source>
-        <translation type="obsolete">О программе</translation>
+        <translation>О программе</translation>
     </message>
 </context>
 </TS>

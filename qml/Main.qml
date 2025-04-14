@@ -19,6 +19,11 @@ ApplicationWindow {
         RowLayout {
             anchors.fill: parent
 
+            ToolButton {
+                Material.foreground: "#f0f0f0"
+                action: navigateAction
+            }
+
             Item {
                 Layout.fillWidth: true
             }
@@ -27,10 +32,28 @@ ApplicationWindow {
         }
     }
 
+    Shortcut {
+        sequences: ["Esc", "Back"]
+        enabled: stackView.depth > 1
+        onActivated: navigateAction.trigger()
+    }
+
     Action {
-        id: quitAction
-        shortcut: "Ctrl+Q"
-        onTriggered: Qt.quit()
+        id: navigateAction
+        text: stackView.depth > 1 ? "Back" : "Menu"
+
+        onTriggered: {
+            if (stackView.depth > 1) {
+                stackView.pop()
+            } else {
+                navigationMenu.open()
+            }
+        }
+    }
+
+    NavigationMenu {
+        id: navigationMenu
+        height: parent.height
     }
 
     StackView {
