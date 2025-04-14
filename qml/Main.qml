@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import "main"
+import "components"
 
 ApplicationWindow {
     id: root
@@ -19,8 +20,7 @@ ApplicationWindow {
         RowLayout {
             anchors.fill: parent
 
-            ToolButton {
-                Material.foreground: "#f0f0f0"
+            StyleToolButton {
                 action: navigateAction
             }
 

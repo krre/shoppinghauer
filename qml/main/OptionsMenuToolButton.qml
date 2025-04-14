@@ -1,9 +1,8 @@
 import QtQuick
 import QtQuick.Controls
+import "../components"
 
-ToolButton {
-    Material.foreground: "#f0f0f0"
-
+StyleToolButton {
     action: Action {
         id: optionsMenuAction
         icon.source: "qrc:/assets/icons/dots-vertical.svg"

@@ -27,6 +27,7 @@ qt_add_qml_module(${PROJECT_NAME}
 
     QML_FILES
         qml/Main.qml
+        qml/components/StyleToolButton.qml
         qml/main/NavigationMenu.qml
         qml/main/OptionsMenu.qml
         qml/main/OptionsMenuToolButton.qml
