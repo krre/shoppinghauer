@@ -24,7 +24,7 @@ ApplicationWindow {
                 Layout.fillWidth: true
             }
 
-            MenuToolButton {}
+            OptionsMenuToolButton {}
         }
     }
 

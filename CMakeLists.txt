@@ -27,7 +27,7 @@ qt_add_qml_module(${PROJECT_NAME}
 
     QML_FILES
         qml/Main.qml
-        qml/main/MenuToolButton.qml
+        qml/main/OptionsMenuToolButton.qml
         qml/dialogs/AboutDialog.qml
 
     SOURCES
