@@ -41,6 +41,7 @@ qt_add_qml_module(${PROJECT_NAME}
     SOURCES
         src/core/Application.cpp src/core/Application.h
         src/database/Database.cpp src/database/Database.h
+        src/database/Migrater.cpp src/database/Migrater.h
 
     RESOURCES
         assets/icons/dots-vertical.svg

@@ -1,5 +1,7 @@
 #include "Database.h"
+#include "Migrater.h"
 #include <QStandardPaths>
+#include <QSqlQuery>
 #include <QDir>
 #include <QSqlError>
 
@@ -20,4 +22,23 @@ void Database::init() {
     }
 
     qInfo().noquote() << "Database opened:" << name;
+
+    Migrater migrater(this);
+    migrater.run();
+}
+
+QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
+    QSqlQuery query;
+    query.prepare(sql);
+
+    for (auto [key, value] : params.asKeyValueRange()) {
+        query.bindValue(":" + key, value);
+    }
+
+    if (!query.exec()) {
+        qCritical().noquote() << "SQL error:" << query.lastError();
+        return QSqlQuery();
+    }
+
+    return query;
 }
