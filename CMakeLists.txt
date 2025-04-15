@@ -6,7 +6,11 @@ set(PROJECT_TITLE Shoppinghauer)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(REQUIRED_QT_VERSION 6.9)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS
+    Quick
+    QuickControls2
+    LinguistTools
+)
 
 qt_standard_project_setup(
     REQUIRES ${REQUIRED_QT_VERSION}
@@ -69,8 +73,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE Qt6::Quick
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt6::Quick
     Qt6::QuickControls2
 )
 
