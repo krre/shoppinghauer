@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Shoppinghauer
 import "main"
 import "components"
 
@@ -14,6 +15,8 @@ ApplicationWindow {
     Component.onCompleted: {
         x = (Screen.desktopAvailableWidth - width) / 2
         y = (Screen.desktopAvailableHeight - height) / 2
+
+        database.init()
     }
 
     header: ToolBar {
@@ -30,6 +33,10 @@ ApplicationWindow {
 
             OptionsMenuToolButton {}
         }
+    }
+
+    Database {
+        id: database
     }
 
     Shortcut {

@@ -9,6 +9,7 @@ set(REQUIRED_QT_VERSION 6.9)
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS
     Quick
     QuickControls2
+    Sql
     LinguistTools
 )
 
@@ -39,6 +40,7 @@ qt_add_qml_module(${PROJECT_NAME}
 
     SOURCES
         src/core/Application.cpp src/core/Application.h
+        src/database/Database.cpp src/database/Database.h
 
     RESOURCES
         assets/icons/dots-vertical.svg
@@ -68,6 +70,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Quick
     Qt6::QuickControls2
+    Qt6::Sql
 )
 
 include(GNUInstallDirs)
