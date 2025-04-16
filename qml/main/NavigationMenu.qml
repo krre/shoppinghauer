@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import "../pages/shoppings"
+import "../pages/products"
 
 Drawer {
     id: root
@@ -11,10 +12,20 @@ Drawer {
         ItemDelegate {
             width: parent.width
             text: qsTr("Shoppings")
+
             onClicked: {
                 stackView.clear()
                 stackView.push(shoppingsPageComp)
                 root.close()
+            }
+        }
+
+        ItemDelegate {
+            width: parent.width
+            text: qsTr("Products")
+
+            onClicked: {
+                stackView.push(productsPageComp)
                 root.close()
             }
         }
@@ -33,5 +44,10 @@ Drawer {
     Component {
         id: shoppingsPageComp
         ShoppingsPage {}
+    }
+
+    Component {
+        id: productsPageComp
+        ProductsPage {}
     }
 }

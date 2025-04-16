@@ -41,6 +41,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/main/AboutDialog.qml
         qml/pages/NamedPage.qml
         qml/pages/shoppings/ShoppingsPage.qml
+        qml/pages/products/ProductsPage.qml
 
     SOURCES
         src/core/Application.cpp src/core/Application.h
