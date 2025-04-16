@@ -23,7 +23,7 @@
     <message>
         <location filename="../qml/main/NavigationMenu.qml" line="14"/>
         <source>Shopping Lists</source>
-        <translation>Список покупок</translation>
+        <translation>Списки покупок</translation>
     </message>
     <message>
         <location filename="../qml/main/NavigationMenu.qml" line="25"/>
