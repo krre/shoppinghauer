@@ -28,7 +28,7 @@ ApplicationWindow {
                 action: navigateAction
             }
 
-            Label {
+            StyledLabel {
                 id: title
                 Layout.fillWidth: true
                 text: stackView.currentItem && stackView.currentItem.name
