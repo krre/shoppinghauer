@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import Shoppinghauer
 import "main"
 import "components"
+import "pages/shoppings"
 
 ApplicationWindow {
     id: root
@@ -27,8 +28,17 @@ ApplicationWindow {
                 action: navigateAction
             }
 
-            Item {
+            Label {
+                id: title
                 Layout.fillWidth: true
+                text: stackView.currentItem && stackView.currentItem.name
+                elide: Text.ElideRight
+                horizontalAlignment: Qt.AlignLeft
+                verticalAlignment: Qt.AlignVCenter
+            }
+
+            Row {
+                data: stackView.currentItem ? stackView.currentItem.toolBar : []
             }
 
             OptionsMenuToolButton {}
@@ -66,5 +76,6 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
+        initialItem: ShoppingsPage {}
     }
 }

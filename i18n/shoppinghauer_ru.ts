@@ -21,7 +21,12 @@
 <context>
     <name>NavigationMenu</name>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="12"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="13"/>
+        <source>Shoppings</source>
+        <translation>Покупки</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="24"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -32,6 +37,14 @@
         <location filename="../qml/main/OptionsMenu.qml" line="8"/>
         <source>About</source>
         <translation>О программе</translation>
+    </message>
+</context>
+<context>
+    <name>ShoppingsPage</name>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="6"/>
+        <source>Shoppings</source>
+        <translation>Покупки</translation>
     </message>
 </context>
 </TS>
