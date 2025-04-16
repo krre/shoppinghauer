@@ -33,6 +33,7 @@ qt_add_qml_module(${PROJECT_NAME}
     QML_FILES
         qml/Main.qml
         qml/components/StyledToolButton.qml
+        qml/components/PlusToolButton.qml
         qml/components/StyledLabel.qml
         qml/components/style.js
         qml/main/NavigationMenu.qml
@@ -52,6 +53,7 @@ qt_add_qml_module(${PROJECT_NAME}
         assets/icons/dots-vertical.svg
         assets/icons/arrow-left.svg
         assets/icons/menu.svg
+        assets/icons/square-plus.svg
         qtquickcontrols2.conf
 )
 
