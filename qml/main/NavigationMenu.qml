@@ -11,11 +11,11 @@ Drawer {
 
         ItemDelegate {
             width: parent.width
-            text: qsTr("Shoppings")
+            text: qsTr("Shopping Lists")
 
             onClicked: {
                 stackView.clear()
-                stackView.push(shoppingsPageComp)
+                stackView.push(shoppingListsPageComp)
                 root.close()
             }
         }
@@ -42,8 +42,8 @@ Drawer {
     }
 
     Component {
-        id: shoppingsPageComp
-        ShoppingsPage {}
+        id: shoppingListsPageComp
+        ShoppingListsPage {}
     }
 
     Component {

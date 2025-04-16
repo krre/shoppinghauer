@@ -76,6 +76,6 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: ShoppingsPage {}
+        initialItem: ShoppingListsPage {}
     }
 }

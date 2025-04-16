@@ -41,7 +41,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/main/OptionsMenuToolButton.qml
         qml/main/AboutDialog.qml
         qml/pages/NamedPage.qml
-        qml/pages/shoppings/ShoppingsPage.qml
+        qml/pages/shoppings/ShoppingListsPage.qml
         qml/pages/products/ProductsPage.qml
 
     SOURCES

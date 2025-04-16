@@ -4,7 +4,7 @@ import ".."
 
 NamedPage {
     id: root
-    name: qsTr("Shoppings")
+    name: qsTr("Shopping Lists")
 
     toolBar: Row {
         PlusToolButton {}
