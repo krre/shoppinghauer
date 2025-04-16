@@ -23,7 +23,7 @@
     <message>
         <location filename="../qml/main/NavigationMenu.qml" line="14"/>
         <source>Shopping Lists</source>
-        <translation type="unfinished">Списки покупок</translation>
+        <translation>Список покупок</translation>
     </message>
     <message>
         <location filename="../qml/main/NavigationMenu.qml" line="25"/>
@@ -50,6 +50,14 @@
         <location filename="../qml/pages/products/ProductsPage.qml" line="7"/>
         <source>Products</source>
         <translation>Продукты</translation>
+    </message>
+</context>
+<context>
+    <name>ShoppingListEditorPage</name>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="6"/>
+        <source>Shopping List</source>
+        <translation>Список покупок</translation>
     </message>
 </context>
 <context>
