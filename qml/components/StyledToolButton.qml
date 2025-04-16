@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
+import "style.js" as Style
 
 ToolButton {
-    Material.foreground: "#f0f0f0"
+    Material.foreground: Style.foregroundColor
 }
