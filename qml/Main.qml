@@ -24,7 +24,7 @@ ApplicationWindow {
         RowLayout {
             anchors.fill: parent
 
-            StyleToolButton {
+            StyledToolButton {
                 action: navigateAction
             }
 
