@@ -44,6 +44,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/shoppings/ShoppingListsPage.qml
         qml/pages/shoppings/ShoppingListEditorPage.qml
         qml/pages/products/ProductsPage.qml
+        qml/pages/products/ProductEditorPage.qml
 
     SOURCES
         src/core/Application.cpp src/core/Application.h

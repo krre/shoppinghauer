@@ -45,6 +45,14 @@
     </message>
 </context>
 <context>
+    <name>ProductEditorPage</name>
+    <message>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="6"/>
+        <source>Product</source>
+        <translation>Продукт</translation>
+    </message>
+</context>
+<context>
     <name>ProductsPage</name>
     <message>
         <location filename="../qml/pages/products/ProductsPage.qml" line="7"/>

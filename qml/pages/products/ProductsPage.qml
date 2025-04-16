@@ -7,6 +7,13 @@ NamedPage {
     name: qsTr("Products")
 
     toolBar: Row {
-        PlusToolButton {}
+        PlusToolButton {
+            onClicked: pushPage(productEditorPageComp)
+        }
+    }
+
+    Component {
+        id: productEditorPageComp
+        ProductEditorPage {}
     }
 }
