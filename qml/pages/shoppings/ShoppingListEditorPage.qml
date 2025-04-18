@@ -38,6 +38,7 @@ NamedPage {
         Label {
             Layout.alignment: Qt.AlignHCenter
             text: Qt.formatDate(selected, "dd MMM yyyy")
+            font.bold: true
         }
 
         TextField {
