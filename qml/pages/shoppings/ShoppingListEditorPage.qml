@@ -14,7 +14,6 @@ NamedPage {
         spacing: 10
 
         DayOfWeekRow {
-            Layout.column: 1
             Layout.fillWidth: true
             locale: grid.locale
         }
