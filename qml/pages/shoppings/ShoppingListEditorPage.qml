@@ -26,9 +26,11 @@ NamedPage {
             year: (new Date).getFullYear()
 
             delegate: Text {
+                property bool isSelected: model.day === root.selected.getDate() && model.month === root.selected.getMonth()
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: model.day === root.selected.getDate() && model.month === root.selected.getMonth() ? "red" : "black"
+                color: isSelected ? "red" : "black"
+                font.bold: isSelected ? true : false
                 text: model.day
             }
 
