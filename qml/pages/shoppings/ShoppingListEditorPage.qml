@@ -31,6 +31,7 @@ NamedPage {
                 verticalAlignment: Text.AlignVCenter
                 color: isSelected ? "red" : "black"
                 font.bold: isSelected ? true : false
+                font.pointSize: grid.font.pointSize + 3
                 text: model.day
             }
 
