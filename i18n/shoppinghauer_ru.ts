@@ -37,6 +37,14 @@
     </message>
 </context>
 <context>
+    <name>OkButton</name>
+    <message>
+        <location filename="../qml/components/OkButton.qml" line="5"/>
+        <source>OK</source>
+        <translation>ОК</translation>
+    </message>
+</context>
+<context>
     <name>OptionsMenu</name>
     <message>
         <location filename="../qml/main/OptionsMenu.qml" line="8"/>
@@ -63,9 +71,14 @@
 <context>
     <name>ShoppingListEditorPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="6"/>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="9"/>
         <source>Shopping List</source>
         <translation>Список покупок</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="17"/>
+        <source>Name</source>
+        <translation>Название</translation>
     </message>
 </context>
 <context>
