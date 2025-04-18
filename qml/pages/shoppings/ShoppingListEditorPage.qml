@@ -28,11 +28,11 @@ NamedPage {
             delegate: Text {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: model.day === root.selected.getDate() && model.month === root.selected.getMonth()  ? "red" : "black"
+                color: model.day === root.selected.getDate() && model.month === root.selected.getMonth() ? "red" : "black"
                 text: model.day
             }
 
-            onClicked: (date) => { selected = date }
+            onClicked: (date) => selected = date
         }
 
         Label {
