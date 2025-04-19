@@ -71,12 +71,12 @@
 <context>
     <name>ShoppingListEditorPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="10"/>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="11"/>
         <source>Shopping List</source>
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="50"/>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="53"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -94,12 +94,17 @@
         <translation>Вы уверены, что хотите удалить список покупок?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="46"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="48"/>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="53"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="73"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="80"/>
         <source>Noname</source>
         <translation>Без названия</translation>
     </message>

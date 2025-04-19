@@ -7,7 +7,16 @@ import ".."
 NamedPage {
     id: root
     property date selected
+    property int id: 0
     name: qsTr("Shopping List")
+
+    Component.onCompleted: {
+        if (id > 0) {
+            const params = database.shoppingList(id)
+            selected = new Date(params.shopping_date)
+            name.text = params.name
+        }
+    }
 
     ColumnLayout {
         width: parent.width
@@ -55,7 +64,9 @@ NamedPage {
         OkButton {
             Layout.alignment: Qt.AlignRight
             onClicked: {
-                if (selected) {
+                if (id > 0) {
+                    database.updateShoppingList(id, selected, name.text)
+                } else if (selected) {
                     database.insertShoppingList(selected, name.text)
                 }
 

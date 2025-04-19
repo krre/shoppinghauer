@@ -37,9 +37,25 @@ void Database::insertShoppingList(const QDate& date, const QString& name) {
     exec("INSERT INTO shopping_lists (shopping_date, name) VALUES (:shopping_date, :name)", params);
 }
 
+void Database::updateShoppingList(int id, const QDate& date, const QString& name) {
+    QVariantMap params = {
+        { "id", id },
+        { "shopping_date", date },
+        { "name", name },
+    };
+
+    exec("UPDATE shopping_lists SET shopping_date = :shopping_date, name = :name WHERE id = :id", params);
+}
+
 QVariantList Database::shoppingLists() {
     QSqlQuery query = exec("SELECT * FROM shopping_lists ORDER BY shopping_date DESC");
     return queryToList(&query);
+}
+
+QVariantMap Database::shoppingList(int id) const {
+    QSqlQuery query = exec("SELECT * FROM shopping_lists WHERE id = :id", { { "id", id } });
+    query.first();
+    return queryToMap(&query);
 }
 
 void Database::removeShoppingList(int id) {

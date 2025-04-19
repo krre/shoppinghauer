@@ -45,6 +45,11 @@ NamedPage {
         property int index: -1
 
         MenuItem {
+            text: qsTr("Edit")
+            onClicked: pushPage(shoppingListEditorPageComp, { id: model.get(contextMenu.index).id })
+        }
+
+        MenuItem {
             text: qsTr("Remove")
             onClicked: removeDialog.open()
         }
