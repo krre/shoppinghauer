@@ -55,17 +55,17 @@
 <context>
     <name>ProductEditorPage</name>
     <message>
-        <location filename="../qml/pages/products/ProductEditorPage.qml" line="10"/>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="11"/>
         <source>Product</source>
         <translation>Продукт</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductEditorPage.qml" line="14"/>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="22"/>
         <source>Product already exists</source>
         <translation>Продукт уже существует</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductEditorPage.qml" line="25"/>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="33"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -84,6 +84,11 @@
     </message>
     <message>
         <location filename="../qml/pages/products/ProductsPage.qml" line="48"/>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="54"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>

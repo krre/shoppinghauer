@@ -7,7 +7,15 @@ import ".."
 
 NamedPage {
     id: root
+    property int id: 0
     name: qsTr("Product")
+
+    Component.onCompleted: {
+        if (id > 0) {
+            const params = database.product(id)
+            name.text = params.name
+        }
+    }
 
     MessageDialog {
         id: duplicateDialog
@@ -32,7 +40,11 @@ NamedPage {
             enabled: name.text
 
             onClicked: {
-                database.insertProduct(name.text)
+                if (id > 0) {
+                    database.updateProduct(id, name.text)
+                } else {
+                    database.insertProduct(name.text)
+                }
 
                 const CONSTRAINT_UNIQUE = "2067"
 

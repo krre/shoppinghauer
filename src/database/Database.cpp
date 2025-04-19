@@ -70,9 +70,24 @@ void Database::insertProduct(const QString& name) {
     exec("INSERT INTO products (name) VALUES (:name)", params);
 }
 
+void Database::updateProduct(int id, const QString& name) {
+    QVariantMap params = {
+        { "id", id },
+        { "name", name },
+    };
+
+    exec("UPDATE products SET name = :name WHERE id = :id", params);
+}
+
 QVariantList Database::products() {
     QSqlQuery query = exec("SELECT * FROM products ORDER BY name ASC");
     return queryToList(&query);
+}
+
+QVariantMap Database::product(int id) const {
+    QSqlQuery query = exec("SELECT * FROM products WHERE id = :id", { { "id", id } });
+    query.first();
+    return queryToMap(&query);
 }
 
 void Database::removeProduct(int id) {
