@@ -18,6 +18,7 @@ ApplicationWindow {
         y = (Screen.desktopAvailableHeight - height) / 2
 
         database.init()
+        stackView.push(shoppingListsPage)
     }
 
     header: ToolBar {
@@ -68,6 +69,11 @@ ApplicationWindow {
         }
     }
 
+    Component {
+        id: shoppingListsPage
+        ShoppingListsPage {}
+    }
+
     NavigationMenu {
         id: navigationMenu
         height: parent.height
@@ -76,6 +82,5 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: ShoppingListsPage {}
     }
 }
