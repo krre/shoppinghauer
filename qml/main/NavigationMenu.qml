@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "../pages/shoppings"
+import "../pages/shoppinglists"
 import "../pages/products"
 
 Drawer {

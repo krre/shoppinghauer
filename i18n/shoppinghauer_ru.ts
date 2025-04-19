@@ -96,12 +96,12 @@
 <context>
     <name>ShoppingListEditorPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="11"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="11"/>
         <source>Shopping List</source>
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="59"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="59"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -109,27 +109,27 @@
 <context>
     <name>ShoppingListsPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="9"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="9"/>
         <source>Shopping Lists</source>
         <translation>Списки покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="32"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="32"/>
         <source>Do you want to remove shopping list?</source>
         <translation>Вы уверены, что хотите удалить список покупок?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="48"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="48"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="54"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="54"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="82"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="82"/>
         <source>Noname</source>
         <translation>Без названия</translation>
     </message>

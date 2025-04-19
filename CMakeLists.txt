@@ -42,8 +42,8 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/main/OptionsMenuToolButton.qml
         qml/main/AboutDialog.qml
         qml/pages/NamedPage.qml
-        qml/pages/shoppings/ShoppingListsPage.qml
-        qml/pages/shoppings/ShoppingListEditorPage.qml
+        qml/pages/shoppinglists/ShoppingListsPage.qml
+        qml/pages/shoppinglists/ShoppingListEditorPage.qml
         qml/pages/products/ProductsPage.qml
         qml/pages/products/ProductEditorPage.qml
 
