@@ -84,12 +84,22 @@
 <context>
     <name>ShoppingListsPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="8"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="9"/>
         <source>Shopping Lists</source>
         <translation>Списки покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="50"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="32"/>
+        <source>Do you want to remove shopping list?</source>
+        <translation>Вы уверены, что хотите удалить список покупок?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="46"/>
+        <source>Remove</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="73"/>
         <source>Noname</source>
         <translation>Без названия</translation>
     </message>

@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Dialogs
 import "../../components"
 import ".."
 
@@ -26,6 +27,29 @@ NamedPage {
         ShoppingListEditorPage {}
     }
 
+    MessageDialog {
+        id: removeDialog
+        text: qsTr("Do you want to remove shopping list?")
+        buttons: MessageDialog.Yes | MessageDialog.No
+
+        onButtonClicked: function (button, role) {
+            if (button === MessageDialog.No) return
+
+            database.removeShoppingList(model.get(contextMenu.index).id)
+            model.remove(contextMenu.index)
+        }
+    }
+
+    Menu {
+        id: contextMenu
+        property int index: -1
+
+        MenuItem {
+            text: qsTr("Remove")
+            onClicked: removeDialog.open()
+        }
+    }
+
     ListModel {
         id: model
     }
@@ -36,6 +60,7 @@ NamedPage {
         spacing: 5
 
         delegate: Rectangle {
+            id: delegate
             width: ListView.view.width
             height: 50
             border.color: Material.primaryColor
@@ -52,6 +77,16 @@ NamedPage {
 
                 Label {
                     text: (new Date(date)).toLocaleDateString()
+                }
+            }
+
+            TapHandler {
+                id: tapHandler
+                gesturePolicy: TapHandler.ReleaseWithinBounds
+
+                onLongPressed: {
+                    contextMenu.index = index
+                    contextMenu.popup(delegate)
                 }
             }
         }

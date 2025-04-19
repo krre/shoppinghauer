@@ -42,6 +42,10 @@ QVariantList Database::shoppingLists() {
     return queryToList(&query);
 }
 
+void Database::removeShoppingList(int id) {
+    exec("DELETE FROM shopping_lists WHERE id = :id", { { "id", id } });
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
