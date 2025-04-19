@@ -54,7 +54,13 @@ NamedPage {
 
         OkButton {
             Layout.alignment: Qt.AlignRight
-            onClicked: popPage()
+            onClicked: {
+                if (selected) {
+                    database.insertShoppingList(selected, name.text)
+                }
+
+                popPage()
+            }
         }
     }
 }

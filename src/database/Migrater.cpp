@@ -41,5 +41,13 @@ void Migrater::migration1() const {
         );)"
     );
 
+    m_db->exec(R"(
+        CREATE TABLE shopping_lists(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            shopping_date TIMESTAMP,
+            name TEXT
+        );)"
+    );
+
     m_db->exec("INSERT INTO meta (version) VALUES (0);");
 }

@@ -27,6 +27,15 @@ void Database::init() {
     migrater.run();
 }
 
+void Database::insertShoppingList(const QDate& date, const QString& name) {
+    QVariantMap params = {
+        { "shopping_date", date },
+        { "name", name },
+    };
+
+    exec("INSERT INTO shopping_lists (shopping_date, name) VALUES (:shopping_date, :name)", params);
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
