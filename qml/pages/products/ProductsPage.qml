@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Dialogs
 import "../../components"
 import ".."
 
@@ -26,6 +27,30 @@ NamedPage {
         ProductEditorPage {}
     }
 
+    MessageDialog {
+        id: removeDialog
+        text: qsTr("Do you want to remove product?")
+        buttons: MessageDialog.Yes | MessageDialog.No
+
+        onButtonClicked: function (button, role) {
+            if (button === MessageDialog.No) return
+
+            database.removeProduct(model.get(contextMenu.index).id)
+            model.remove(contextMenu.index)
+        }
+    }
+
+    Menu {
+        id: contextMenu
+        property int index: -1
+
+        MenuItem {
+            text: qsTr("Remove")
+
+            onClicked: removeDialog.open()
+        }
+    }
+
     ListModel {
         id: model
     }
@@ -49,6 +74,16 @@ NamedPage {
 
                 Label {
                     text: name
+                }
+            }
+
+            TapHandler {
+                id: tapHandler
+                gesturePolicy: TapHandler.ReleaseWithinBounds
+
+                onLongPressed: {
+                    contextMenu.index = index
+                    contextMenu.popup(delegate)
                 }
             }
         }

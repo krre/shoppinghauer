@@ -17,6 +17,7 @@ public:
 
     Q_INVOKABLE void insertProduct(const QString& name = {});
     Q_INVOKABLE QVariantList products();
+    Q_INVOKABLE void removeProduct(int id);
 
     Q_INVOKABLE QString lastErrorCode() const;
 

@@ -73,9 +73,19 @@
 <context>
     <name>ProductsPage</name>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="7"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="9"/>
         <source>Products</source>
         <translation>Продукты</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="32"/>
+        <source>Do you want to remove product?</source>
+        <translation>Вы уверены, что хотите удалить продукт?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="48"/>
+        <source>Remove</source>
+        <translation>Удалить</translation>
     </message>
 </context>
 <context>

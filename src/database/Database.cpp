@@ -75,6 +75,10 @@ QVariantList Database::products() {
     return queryToList(&query);
 }
 
+void Database::removeProduct(int id) {
+    exec("DELETE FROM products WHERE id = :id", { { "id", id } });
+}
+
 QString Database::lastErrorCode() const {
     return m_lastErrorCode;
 }
