@@ -55,9 +55,19 @@
 <context>
     <name>ProductEditorPage</name>
     <message>
-        <location filename="../qml/pages/products/ProductEditorPage.qml" line="6"/>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="10"/>
         <source>Product</source>
         <translation>Продукт</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="14"/>
+        <source>Product already exists</source>
+        <translation>Продукт уже существует</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductEditorPage.qml" line="25"/>
+        <source>Name</source>
+        <translation>Название</translation>
     </message>
 </context>
 <context>
@@ -76,7 +86,7 @@
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="53"/>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="59"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -99,12 +109,12 @@
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="53"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="54"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="80"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="82"/>
         <source>Noname</source>
         <translation>Без названия</translation>
     </message>

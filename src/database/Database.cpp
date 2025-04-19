@@ -62,6 +62,18 @@ void Database::removeShoppingList(int id) {
     exec("DELETE FROM shopping_lists WHERE id = :id", { { "id", id } });
 }
 
+void Database::insertProduct(const QString& name) {
+    QVariantMap params = {
+        { "name", name },
+    };
+
+    exec("INSERT INTO products (name) VALUES (:name)", params);
+}
+
+QString Database::lastErrorCode() const {
+    return m_lastErrorCode;
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
@@ -70,7 +82,10 @@ QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
         query.bindValue(":" + key, value);
     }
 
-    if (!query.exec()) {
+    bool success = query.exec();
+    m_lastErrorCode = query.lastError().nativeErrorCode();
+
+    if (!success) {
         qCritical().noquote() << "SQL error:" << query.lastError();
         return QSqlQuery();
     }

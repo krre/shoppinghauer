@@ -15,6 +15,10 @@ public:
     Q_INVOKABLE QVariantMap shoppingList(int id) const;
     Q_INVOKABLE void removeShoppingList(int id);
 
+    Q_INVOKABLE void insertProduct(const QString& name = {});
+
+    Q_INVOKABLE QString lastErrorCode() const;
+
     const QSqlDatabase& db() const { return m_db; }
     QSqlQuery exec(const QString& sql, const QVariantMap& params = {}) const;
 
@@ -23,4 +27,5 @@ private:
     QVariantList queryToList(QSqlQuery* query) const;
 
     QSqlDatabase m_db;
+    mutable QString m_lastErrorCode;
 };

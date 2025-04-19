@@ -49,5 +49,12 @@ void Migrater::migration1() const {
         );)"
     );
 
+    m_db->exec(R"(
+        CREATE TABLE products(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE
+        );)"
+    );
+
     m_db->exec("INSERT INTO meta (version) VALUES (0);");
 }
