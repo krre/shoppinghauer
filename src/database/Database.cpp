@@ -70,6 +70,11 @@ void Database::insertProduct(const QString& name) {
     exec("INSERT INTO products (name) VALUES (:name)", params);
 }
 
+QVariantList Database::products() {
+    QSqlQuery query = exec("SELECT * FROM products ORDER BY name ASC");
+    return queryToList(&query);
+}
+
 QString Database::lastErrorCode() const {
     return m_lastErrorCode;
 }
