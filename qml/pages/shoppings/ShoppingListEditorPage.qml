@@ -63,6 +63,7 @@ NamedPage {
 
         OkButton {
             Layout.alignment: Qt.AlignRight
+
             onClicked: {
                 if (id > 0) {
                     database.updateShoppingList(id, selected, name.text)
