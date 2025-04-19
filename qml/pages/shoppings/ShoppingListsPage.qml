@@ -47,7 +47,7 @@ NamedPage {
                 anchors.margins: 10
 
                 Label {
-                    text: name
+                    text: name || qsTr("Noname")
                 }
 
                 Label {

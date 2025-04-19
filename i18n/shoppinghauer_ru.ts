@@ -71,12 +71,12 @@
 <context>
     <name>ShoppingListEditorPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="9"/>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="10"/>
         <source>Shopping List</source>
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="17"/>
+        <location filename="../qml/pages/shoppings/ShoppingListEditorPage.qml" line="50"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -84,9 +84,14 @@
 <context>
     <name>ShoppingListsPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="7"/>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="8"/>
         <source>Shopping Lists</source>
         <translation>Списки покупок</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/shoppings/ShoppingListsPage.qml" line="50"/>
+        <source>Noname</source>
+        <translation>Без названия</translation>
     </message>
 </context>
 </TS>
