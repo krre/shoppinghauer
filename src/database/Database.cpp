@@ -117,6 +117,10 @@ void Database::insertShoppings(int shoppingListId, const QVariantList& productId
     }
 }
 
+void Database::removeShopping(int id) {
+    exec("DELETE FROM shoppings WHERE id = :id", { { "id", id } });
+}
+
 QString Database::lastErrorCode() const {
     return m_lastErrorCode;
 }
