@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 import QtQuick.Dialogs
 import "../products"
 import "../../components"
@@ -11,6 +12,10 @@ NamedPage {
     name: qsTr("Shoppings")
 
     StackView.onActivated: {
+        const shoppingListParams = database.shoppingList(shoppingListId)
+        shoppingListName.text = shoppingListParams.name
+        shoppingListDate.text = (new Date(shoppingListParams.shopping_date)).toLocaleDateString()
+
         shoppingsModel.clear()
 
         for (let params of database.shoppings(shoppingListId)) {
@@ -63,35 +68,49 @@ NamedPage {
         id: shoppingsModel
     }
 
-    ListView {
+    ColumnLayout {
         anchors.fill: parent
-        model: shoppingsModel
-        spacing: 5
 
-        delegate: Rectangle {
-            id: delegate
-            width: ListView.view.width
-            height: 50
-            border.color: Material.primaryColor
+        Label {
+            id: shoppingListName
+            font.bold: true
+        }
 
-            Column {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.margins: 10
+        Label {
+            id: shoppingListDate
+        }
 
-                Label {
-                    text: name
+        ListView {
+            Layout.preferredWidth: parent.width
+            Layout.fillHeight: true
+            model: shoppingsModel
+            spacing: 5
+
+            delegate: Rectangle {
+                id: delegate
+                width: ListView.view.width
+                height: 50
+                border.color: Material.primaryColor
+
+                Column {
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.margins: 10
+
+                    Label {
+                        text: name
+                    }
                 }
-            }
 
-            TapHandler {
-                id: tapHandler
-                gesturePolicy: TapHandler.ReleaseWithinBounds
+                TapHandler {
+                    id: tapHandler
+                    gesturePolicy: TapHandler.ReleaseWithinBounds
 
-                onLongPressed: {
-                    contextMenu.index = index
-                    contextMenu.popup(delegate)
+                    onLongPressed: {
+                        contextMenu.index = index
+                        contextMenu.popup(delegate)
+                    }
                 }
             }
         }
