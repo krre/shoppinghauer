@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
+import "../products"
 import "../../components"
 import ".."
 
@@ -19,7 +20,18 @@ NamedPage {
 
     toolBar: Row {
         PlusToolButton {
+            onClicked: {
+                const productsPage = pushPage(productsPageComp, { "selectMode": true })
+                productsPage.selected.connect(function(products) {
+                    print(JSON.stringify(products))
+                })
+            }
         }
+    }
+
+    Component {
+        id: productsPageComp
+        ProductsPage {}
     }
 
     MessageDialog {

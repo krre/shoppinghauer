@@ -58,6 +58,7 @@ qt_add_qml_module(${PROJECT_NAME}
         assets/icons/arrow-left.svg
         assets/icons/menu.svg
         assets/icons/square-plus.svg
+        assets/icons/checks.svg
         qtquickcontrols2.conf
 )
 

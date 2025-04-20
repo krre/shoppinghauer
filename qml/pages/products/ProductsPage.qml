@@ -6,19 +6,40 @@ import ".."
 
 NamedPage {
     id: root
+    property bool selectMode: false
     name: qsTr("Products")
 
+    signal selected(var products)
+
     StackView.onActivated: {
-        model.clear()
+        productsModel.clear()
 
         for (let params of database.products()) {
-            model.append({ id: params.id, name: params.name })
+            productsModel.append({ id: params.id, name: params.name, checked: false })
         }
     }
 
     toolBar: Row {
         PlusToolButton {
             onClicked: pushPage(productEditorPageComp)
+        }
+
+        StyledToolButton {
+            icon.source: "qrc:/assets/icons/checks.svg"
+            visible: selectMode
+
+            onClicked: {
+                const products = []
+
+                for (let i = 0; i < productsModel.count; ++i) {
+                    if (productsModel.get(i).checked) {
+                        products.push(productsModel.get(i).id)
+                    }
+                }
+
+                selected(products)
+                popPage()
+            }
         }
     }
 
@@ -35,8 +56,8 @@ NamedPage {
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
 
-            database.removeProduct(model.get(contextMenu.index).id)
-            model.remove(contextMenu.index)
+            database.removeProduct(productsModel.get(contextMenu.index).id)
+            productsModel.remove(contextMenu.index)
         }
     }
 
@@ -47,7 +68,7 @@ NamedPage {
         MenuItem {
             text: qsTr("Edit")
 
-            onClicked: pushPage(productEditorPageComp, { id: model.get(contextMenu.index).id })
+            onClicked: pushPage(productEditorPageComp, { id: productsModel.get(contextMenu.index).id })
         }
 
         MenuItem {
@@ -58,12 +79,12 @@ NamedPage {
     }
 
     ListModel {
-        id: model
+        id: productsModel
     }
 
     ListView {
         anchors.fill: parent
-        model: model
+        model: productsModel
         spacing: 5
 
         delegate: Rectangle {
@@ -72,13 +93,21 @@ NamedPage {
             height: 50
             border.color: Material.primaryColor
 
-            Column {
+            Row {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.margins: 10
 
-                Label {
+                CheckBox {
+                    anchors.verticalCenter: parent.verticalCenter
+                    visible: selectMode
+
+                    onCheckedChanged: productsModel.setProperty(index, "checked", checked)
+                }
+
+                Label  {
+                    anchors.verticalCenter: parent.verticalCenter
                     text: name
                 }
             }
