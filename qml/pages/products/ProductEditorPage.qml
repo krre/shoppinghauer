@@ -37,9 +37,13 @@ NamedPage {
 
         OkButton {
             Layout.alignment: Qt.AlignRight
-            enabled: name.text
 
             onClicked: {
+                if (!name.text) {
+                    popPage()
+                    return
+                }
+
                 if (id > 0) {
                     database.updateProduct(id, name.text)
                 } else {
