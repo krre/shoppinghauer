@@ -1,60 +1,43 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
-import "../shoppings"
 import "../../components"
 import ".."
 
 NamedPage {
     id: root
-    name: qsTr("Shopping Lists")
+    property int shoppingListId: 0
+    name: qsTr("Shoppings")
 
     StackView.onActivated: {
-        shoppingListsModel.clear()
+        shoppingsModel.clear()
 
-        for (let params of database.shoppingLists()) {
-            shoppingListsModel.append({ id: params.id, date: params.shopping_date, name: params.name })
+        for (let params of database.shoppings(shoppingListId)) {
+            shoppingsModel.append({ id: params.id, name: params.name, count: params.count })
         }
     }
 
     toolBar: Row {
         PlusToolButton {
-            onClicked: pushPage(shoppingListEditorPageComp)
         }
-    }
-
-    Component {
-        id: shoppingListEditorPageComp
-        ShoppingListEditorPage {}
-    }
-
-    Component {
-        id: shoppingsPageComp
-        ShoppingsPage {}
     }
 
     MessageDialog {
         id: removeDialog
-        text: qsTr("Do you want to remove shopping list?")
+        text: qsTr("Do you want to remove shopping?")
         buttons: MessageDialog.Yes | MessageDialog.No
 
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
 
-            database.removeShoppingList(shoppingListsModel.get(contextMenu.index).id)
-            shoppingListsModel.remove(contextMenu.index)
+            database.removeShopping(shoppingsModel.get(contextMenu.index).id)
+            shoppingsModel.remove(contextMenu.index)
         }
     }
 
     Menu {
         id: contextMenu
         property int index: -1
-
-        MenuItem {
-            text: qsTr("Edit")
-
-            onClicked: pushPage(shoppingListEditorPageComp, { id: shoppingListsModel.get(contextMenu.index).id })
-        }
 
         MenuItem {
             text: qsTr("Remove")
@@ -64,12 +47,12 @@ NamedPage {
     }
 
     ListModel {
-        id: shoppingListsModel
+        id: shoppingsModel
     }
 
     ListView {
         anchors.fill: parent
-        model: shoppingListsModel
+        model: shoppingsModel
         spacing: 5
 
         delegate: Rectangle {
@@ -85,19 +68,13 @@ NamedPage {
                 anchors.margins: 10
 
                 Label {
-                    text: name || qsTr("Noname")
-                }
-
-                Label {
-                    text: (new Date(date)).toLocaleDateString()
+                    text: name
                 }
             }
 
             TapHandler {
                 id: tapHandler
                 gesturePolicy: TapHandler.ReleaseWithinBounds
-
-                onTapped: pushPage(shoppingsPageComp, { shoppingListId: shoppingListsModel.get(index).id })
 
                 onLongPressed: {
                     contextMenu.index = index

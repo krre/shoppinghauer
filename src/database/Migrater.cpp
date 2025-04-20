@@ -56,5 +56,18 @@ void Migrater::migration1() const {
         );)"
     );
 
+    m_db->exec(R"(
+        CREATE TABLE shoppings(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            shopping_list_id INTEGER,
+            product_id INTEGER,
+            count INTEGER,
+            UNIQUE(shopping_list_id, product_id),
+            FOREIGN KEY (shopping_list_id) REFERENCES shopping_lists(id) ON DELETE CASCADE,
+            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+        );)"
+    );
+
     m_db->exec("INSERT INTO meta (version) VALUES (0);");
+    m_db->exec("CREATE INDEX idx_shoppings_shopping_list_id ON shoppings(shopping_list_id);");
 }

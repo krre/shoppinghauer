@@ -94,6 +94,18 @@ void Database::removeProduct(int id) {
     exec("DELETE FROM products WHERE id = :id", { { "id", id } });
 }
 
+QVariantList Database::shoppings(int shoppingListId) {
+    QSqlQuery query = exec(R"(
+        SELECT p.name, s.count
+        FROM shoppings AS s
+        JOIN products AS p ON p.id = product_id
+        WHERE s.shopping_list_id = :shopping_list_id
+        ORDER BY s.id ASC
+    )", { { ":shopping_list_id", shoppingListId } });
+
+    return queryToList(&query);
+}
+
 QString Database::lastErrorCode() const {
     return m_lastErrorCode;
 }

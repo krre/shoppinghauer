@@ -35,13 +35,13 @@ NamedPage {
             year: (new Date).getFullYear()
 
             delegate: Text {
-                property bool isSelected: model.day === root.selected.getDate() && model.month === root.selected.getMonth()
+                property bool isSelected: shoppingListsModel.day === root.selected.getDate() && shoppingListsModel.month === root.selected.getMonth()
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 color: isSelected ? "red" : "black"
                 font.bold: isSelected ? true : false
                 font.pointSize: grid.font.pointSize + 3
-                text: model.day
+                text: shoppingListsModel.day
             }
 
             onClicked: (date) => selected = date

@@ -21,6 +21,8 @@ public:
     Q_INVOKABLE QVariantMap product(int id) const;
     Q_INVOKABLE void removeProduct(int id);
 
+    Q_INVOKABLE QVariantList shoppings(int shoppingListId);
+
     Q_INVOKABLE QString lastErrorCode() const;
 
     const QSqlDatabase& db() const { return m_db; }
