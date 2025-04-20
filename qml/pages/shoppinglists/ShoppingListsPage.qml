@@ -71,6 +71,7 @@ NamedPage {
         anchors.fill: parent
         model: shoppingListsModel
         spacing: 5
+        clip: true
 
         delegate: BorderDelegate {
             id: delegate

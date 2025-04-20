@@ -85,6 +85,7 @@ NamedPage {
             Layout.fillHeight: true
             model: shoppingsModel
             spacing: 5
+            clip: true
 
             delegate: BorderDelegate {
                 id: delegate
