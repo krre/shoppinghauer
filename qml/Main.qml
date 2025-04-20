@@ -32,10 +32,11 @@ ApplicationWindow {
             StyledLabel {
                 id: title
                 Layout.fillWidth: true
-                text: stackView.currentItem && stackView.currentItem.name
-                elide: Text.ElideRight
                 horizontalAlignment: Qt.AlignLeft
                 verticalAlignment: Qt.AlignVCenter
+                text: stackView.currentItem && stackView.currentItem.name
+                elide: Text.ElideRight
+                font.bold: true
             }
 
             Row {
