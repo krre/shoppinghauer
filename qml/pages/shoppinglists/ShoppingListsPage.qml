@@ -86,6 +86,7 @@ NamedPage {
 
                 Label {
                     text: name || qsTr("Noname")
+                    font.bold: true
                 }
 
                 Label {
