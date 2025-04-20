@@ -67,11 +67,9 @@ NamedPage {
         id: shoppingListsModel
     }
 
-    ListView {
+    PageListView {
         anchors.fill: parent
         model: shoppingListsModel
-        spacing: 5
-        clip: true
 
         delegate: BorderDelegate {
             id: delegate

@@ -38,6 +38,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/components/StyledLabel.qml
         qml/components/style.js
         qml/components/BorderDelegate.qml
+        qml/components/PageListView.qml
         qml/main/NavigationMenu.qml
         qml/main/OptionsMenu.qml
         qml/main/OptionsMenuToolButton.qml
@@ -61,7 +62,6 @@ qt_add_qml_module(${PROJECT_NAME}
         assets/icons/square-plus.svg
         assets/icons/checks.svg
         qtquickcontrols2.conf
-        QML_FILES
 )
 
 qt_add_translations(${PROJECT_NAME}

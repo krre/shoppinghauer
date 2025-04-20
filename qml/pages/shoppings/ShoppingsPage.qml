@@ -80,12 +80,10 @@ NamedPage {
             id: shoppingListDate
         }
 
-        ListView {
+        PageListView {
             Layout.preferredWidth: parent.width
             Layout.fillHeight: true
             model: shoppingsModel
-            spacing: 5
-            clip: true
 
             delegate: BorderDelegate {
                 id: delegate
