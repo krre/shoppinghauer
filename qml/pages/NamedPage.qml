@@ -7,11 +7,11 @@ Page {
     property var toolBar: []
 
     function pushPage(item, properties, operation) {
-        StackView.view.push(item, properties, operation)
+        return StackView.view.push(item, properties, operation)
     }
 
     function popPage() {
-        StackView.view.pop()
+        return StackView.view.pop()
     }
 
     Item {
