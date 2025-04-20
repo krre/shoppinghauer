@@ -76,6 +76,7 @@ NamedPage {
             id: delegate
             width: ListView.view.width
             height: 50
+            color: new Date(date) < new Date() ? "#eeeeee" : "white"
             border.color: Material.primaryColor
 
             Column {
