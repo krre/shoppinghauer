@@ -22,6 +22,7 @@ public:
     Q_INVOKABLE void removeProduct(int id);
 
     Q_INVOKABLE QVariantList shoppings(int shoppingListId);
+    Q_INVOKABLE void insertShoppings(int shoppingListId, const QVariantList& productIds);
 
     Q_INVOKABLE QString lastErrorCode() const;
 

@@ -22,8 +22,9 @@ NamedPage {
         PlusToolButton {
             onClicked: {
                 const productsPage = pushPage(productsPageComp, { "selectMode": true })
+
                 productsPage.selected.connect(function(products) {
-                    print(JSON.stringify(products))
+                    database.insertShoppings(shoppingListId, products)
                 })
             }
         }

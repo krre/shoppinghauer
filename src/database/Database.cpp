@@ -106,6 +106,17 @@ QVariantList Database::shoppings(int shoppingListId) {
     return queryToList(&query);
 }
 
+void Database::insertShoppings(int shoppingListId, const QVariantList& productIds) {
+    for (const auto& productId : productIds) {
+        QVariantMap params = {
+            { "shopping_list_id", shoppingListId },
+            { "product_id", productId.toInt() },
+        };
+
+        exec("INSERT INTO shoppings (shopping_list_id, product_id, count) VALUES (:shopping_list_id, :product_id, 1)", params);
+    }
+}
+
 QString Database::lastErrorCode() const {
     return m_lastErrorCode;
 }
