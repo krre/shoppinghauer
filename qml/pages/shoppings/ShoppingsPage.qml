@@ -86,11 +86,8 @@ NamedPage {
             model: shoppingsModel
             spacing: 5
 
-            delegate: Rectangle {
+            delegate: BorderDelegate {
                 id: delegate
-                width: ListView.view.width
-                height: 50
-                border.color: Material.primaryColor
 
                 Column {
                     anchors.verticalCenter: parent.verticalCenter
