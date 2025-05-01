@@ -62,6 +62,7 @@ qt_add_qml_module(${PROJECT_NAME}
         assets/icons/square-plus.svg
         assets/icons/checks.svg
         qtquickcontrols2.conf
+        android/AndroidManifest.xml
 )
 
 qt_add_translations(${PROJECT_NAME}
@@ -80,6 +81,7 @@ add_custom_target(other
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     OUTPUT_NAME ${PROJECT_TITLE}
+    QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
