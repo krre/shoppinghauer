@@ -20,10 +20,6 @@ NamedPage {
     }
 
     toolBar: Row {
-        PlusToolButton {
-            onClicked: pushPage(productEditorPageComp)
-        }
-
         StyledToolButton {
             icon.source: "qrc:/assets/icons/checks.svg"
             visible: selectMode
@@ -40,6 +36,10 @@ NamedPage {
                 selected(products)
                 popPage()
             }
+        }
+
+        PlusToolButton {
+            onClicked: pushPage(productEditorPageComp)
         }
     }
 
