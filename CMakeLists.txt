@@ -34,6 +34,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/Main.qml
         qml/components/StyledToolButton.qml
         qml/components/PlusToolButton.qml
+        qml/components/EditToolButton.qml
         qml/components/OkButton.qml
         qml/components/StyledLabel.qml
         qml/components/style.js
