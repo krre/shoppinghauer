@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import "../products"
+import "../shoppinglists"
 import "../../components"
 import ".."
 
@@ -33,11 +34,20 @@ NamedPage {
                 })
             }
         }
+
+        EditToolButton {
+            onClicked: pushPage(shoppingListEditorPageComp, { id: shoppingListId })
+        }
     }
 
     Component {
         id: productsPageComp
         ProductsPage {}
+    }
+
+    Component {
+        id: shoppingListEditorPageComp
+        ShoppingListEditorPage {}
     }
 
     MessageDialog {
