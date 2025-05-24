@@ -73,7 +73,11 @@ NamedPage {
 
         delegate: BorderDelegate {
             id: delegate
-            color: new Date(date) < new Date() ? "#eeeeee" : "white"
+            color: {
+                const now = new Date();
+                const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                new Date(date) < today ? "#eeeeee" : "white"
+            }
 
             Column {
                 anchors.verticalCenter: parent.verticalCenter
