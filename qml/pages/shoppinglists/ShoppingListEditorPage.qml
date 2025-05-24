@@ -34,13 +34,31 @@ NamedPage {
             month: (new Date).getMonth()
             year: (new Date).getFullYear()
 
-            delegate: Text {
+            delegate: Rectangle {
                 property bool isSelected: model.day === root.selected.getDate() && model.month === root.selected.getMonth()
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                color: isSelected ? "red" : "black"
-                font.bold: isSelected ? true : false
-                text: model.day
+                width: 15
+                height: 30
+                color: {
+                    if (isSelected) {
+                        return "red"
+                    }
+
+                    const now = new Date();
+                    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                    const targetDate = new Date(model.year, model.month, model.day)
+
+                    if (targetDate < today) {
+                        return "lightblue"
+                    }
+
+                    return "transparent"
+                }
+
+                Text {
+                    anchors.centerIn: parent
+                    text: model.day
+                    color: isSelected ? "white" : "black"
+                }
             }
 
             onClicked: (date) => selected = date
