@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Dialogs
 import "../shoppings"
 import "../../components"
+import "../../components/style.js" as Style
 import ".."
 
 NamedPage {
@@ -76,7 +77,7 @@ NamedPage {
             color: {
                 const now = new Date();
                 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-                new Date(date) < today ? "#eeeeee" : "white"
+                new Date(date) < today ? Style.passedTimeColor : "white"
             }
 
             Column {
