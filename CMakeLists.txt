@@ -38,6 +38,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/components/OkButton.qml
         qml/components/StyledLabel.qml
         qml/components/style.js
+        qml/components/utils.js
         qml/components/BorderDelegate.qml
         qml/components/PageListView.qml
         qml/main/NavigationMenu.qml

@@ -4,6 +4,7 @@ import QtQuick.Dialogs
 import "../shoppings"
 import "../../components"
 import "../../components/style.js" as Style
+import "../../components/utils.js" as Utils
 import ".."
 
 NamedPage {
@@ -74,11 +75,7 @@ NamedPage {
 
         delegate: BorderDelegate {
             id: delegate
-            color: {
-                const now = new Date();
-                const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-                new Date(date) < today ? Style.passedTimeColor : "white"
-            }
+            color: new Date(date) < Utils.today() ? Style.passedTimeColor : "white"
 
             Column {
                 anchors.verticalCenter: parent.verticalCenter

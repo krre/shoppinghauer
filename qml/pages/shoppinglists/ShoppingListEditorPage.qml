@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "../../components"
 import "../../components/style.js" as Style
+import "../../components/utils.js" as Utils
 import ".."
 
 NamedPage {
@@ -44,11 +45,9 @@ NamedPage {
                         return "red"
                     }
 
-                    const now = new Date();
-                    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
                     const targetDate = new Date(model.year, model.month, model.day)
 
-                    if (targetDate < today) {
+                    if (targetDate < Utils.today()) {
                         return Style.passedTimeColor
                     }
 
