@@ -7,14 +7,14 @@ import ".."
 
 NamedPage {
     id: root
-    property date selected
+    property date selectedDate
     property int id: 0
     name: qsTr("Shopping List")
 
     Component.onCompleted: {
         if (id > 0) {
             const params = database.shoppingList(id)
-            selected = new Date(params.shopping_date)
+            selectedDate = new Date(params.shopping_date)
             name.text = params.name
         }
     }
@@ -36,7 +36,7 @@ NamedPage {
             year: (new Date).getFullYear()
 
             delegate: Rectangle {
-                property bool isSelected: model.day === root.selected.getDate() && model.month === root.selected.getMonth()
+                property bool isSelected: model.day === root.selectedDate.getDate() && model.month === root.selectedDate.getMonth()
                 width: 15
                 height: 30
                 color: {
@@ -62,12 +62,12 @@ NamedPage {
                 }
             }
 
-            onClicked: (date) => selected = date
+            onClicked: (date) => selectedDate = date
         }
 
         Label {
             Layout.alignment: Qt.AlignHCenter
-            text: selected.toLocaleDateString()
+            text: selectedDate.toLocaleDateString()
             font.bold: true
         }
 
@@ -84,9 +84,9 @@ NamedPage {
 
             onClicked: {
                 if (id > 0) {
-                    database.updateShoppingList(id, selected, name.text)
-                } else if (selected) {
-                    database.insertShoppingList(selected, name.text)
+                    database.updateShoppingList(id, selectedDate, name.text)
+                } else if (selectedDate) {
+                    database.insertShoppingList(selectedDate, name.text)
                 }
 
                 popPage()
