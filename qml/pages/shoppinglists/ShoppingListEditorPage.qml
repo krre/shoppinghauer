@@ -17,6 +17,8 @@ NamedPage {
             const params = database.shoppingList(id)
             selectedDate = new Date(params.shopping_date)
             name.text = params.name
+        } else {
+            selectedDate = Utils.today()
         }
     }
 
@@ -33,8 +35,8 @@ NamedPage {
             id: grid
             Layout.fillWidth: true
             Layout.fillHeight: true
-            month: (new Date).getMonth()
-            year: (new Date).getFullYear()
+            month: selectedDate.getMonth()
+            year: selectedDate.getFullYear()
 
             delegate: Rectangle {
                 property bool isSelected: model.day === root.selectedDate.getDate() && model.month === root.selectedDate.getMonth()
