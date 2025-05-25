@@ -14,8 +14,10 @@ NamedPage {
 
     StackView.onActivated: {
         const shoppingListParams = database.shoppingList(shoppingListId)
-        shoppingListName.text = shoppingListParams.name
-        shoppingListDate.text = (new Date(shoppingListParams.shopping_date)).toLocaleDateString()
+
+        const name = shoppingListParams.name
+        const date = new Date(shoppingListParams.shopping_date).toLocaleDateString()
+        shoppingListName.text = String("<b>%1</b> - %2").arg(name).arg(date)
 
         shoppingsModel.clear()
 
@@ -80,14 +82,10 @@ NamedPage {
 
     ColumnLayout {
         anchors.fill: parent
+        spacing: 10
 
         Label {
             id: shoppingListName
-            font.bold: true
-        }
-
-        Label {
-            id: shoppingListDate
         }
 
         PageListView {
