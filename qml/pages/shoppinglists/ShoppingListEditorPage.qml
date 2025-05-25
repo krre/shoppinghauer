@@ -8,17 +8,81 @@ import ".."
 
 NamedPage {
     id: root
-    property date selectedDate
+    property date selectedDate: {
+        if (id > 0) {
+            const params = database.shoppingList(id)
+            name.text = params.name
+            return new Date(params.shopping_date)
+        } else {
+            return Utils.today()
+        }
+    }
+
+    Component.onCompleted: {
+        const index = calendarModel.indexOf(selectedDate.getFullYear(), selectedDate.getMonth())
+        listView.positionViewAtIndex(index, ListView.Visible)
+        listView.currentIndex = index
+    }
+
     property int id: 0
     name: qsTr("Shopping List")
 
-    Component.onCompleted: {
-        if (id > 0) {
-            const params = database.shoppingList(id)
-            selectedDate = new Date(params.shopping_date)
-            name.text = params.name
-        } else {
-            selectedDate = Utils.today()
+    Loader {
+        id: delegateLoader
+        sourceComponent: delegateComponent
+        visible: false
+    }
+
+    Component {
+        id: delegateComponent
+
+        Column {
+            width: listView.width
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.bold: true
+                text: grid.title
+            }
+
+            DayOfWeekRow {
+                width: parent.width
+                locale: grid.locale
+            }
+
+            MonthGrid {
+                id: grid
+                width: parent.width
+                month: model ? model.month : 0
+                year: model ? model.year : 0
+
+                delegate: Rectangle {
+                    property bool isSelected: model.day === root.selectedDate.getDate() && model.month === root.selectedDate.getMonth()
+                    width: 15
+                    height: 30
+                    color: {
+                        if (isSelected) {
+                            return "red"
+                        }
+
+                        const targetDate = new Date(model.year, model.month, model.day)
+
+                        if (targetDate < Utils.today()) {
+                            return Style.passedTimeColor
+                        }
+
+                        return "transparent"
+                    }
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: model.day
+                        color: isSelected ? "white" : "black"
+                    }
+                }
+
+                onClicked: (date) => selectedDate = date
+            }
         }
     }
 
@@ -26,44 +90,32 @@ NamedPage {
         width: parent.width
         spacing: 10
 
-        DayOfWeekRow {
+        ListView {
+            id: listView
+            property int delegateHeight: 0
             Layout.fillWidth: true
-            locale: grid.locale
-        }
+            Layout.preferredHeight: delegateLoader.item ? delegateLoader.item.implicitHeight : 100
+            snapMode: ListView.SnapOneItem
+            orientation: ListView.Horizontal
+            highlightRangeMode: ListView.StrictlyEnforceRange
 
-        MonthGrid {
-            id: grid
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            month: selectedDate.getMonth()
-            year: selectedDate.getFullYear()
+            model: CalendarModel {
+                id: calendarModel
 
-            delegate: Rectangle {
-                property bool isSelected: model.day === root.selectedDate.getDate() && model.month === root.selectedDate.getMonth()
-                width: 15
-                height: 30
-                color: {
-                    if (isSelected) {
-                        return "red"
-                    }
-
-                    const targetDate = new Date(model.year, model.month, model.day)
-
-                    if (targetDate < Utils.today()) {
-                        return Style.passedTimeColor
-                    }
-
-                    return "transparent"
+                from: {
+                    const date = new Date()
+                    date.setMonth(date.getMonth() - 6)
+                    return date
                 }
 
-                Text {
-                    anchors.centerIn: parent
-                    text: model.day
-                    color: isSelected ? "white" : "black"
+                to: {
+                    const date = new Date()
+                    date.setMonth(date.getMonth() + 6)
+                    return date
                 }
             }
 
-            onClicked: (date) => selectedDate = date
+            delegate: delegateComponent
         }
 
         Label {
