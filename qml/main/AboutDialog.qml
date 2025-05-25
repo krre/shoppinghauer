@@ -13,16 +13,27 @@ Dialog {
 
     onVisibleChanged: if (!visible) root.destroy()
 
-    Label {
-        text: qsTr(`<h3>%1 %2</h3><br>
-                    Shopping list<br><br>
-                    Based on Qt %3<br>
-                    Build on %4 %5<br><br>
-                    <a href='%6'>%6</a><br><br>Copyright © %7, Vladimir Zarypov`)
-        .arg(app.name).arg(app.version).arg(app.qtVersion)
-        .arg(app.buildDate).arg(app.buildTime)
-        .arg(app.url).arg(app.years)
+    Column {
+        width: parent.width
+        spacing: 10
 
-        onLinkActivated: (link) => Qt.openUrlExternally(link)
+        Image {
+            width: parent.width
+            source: "qrc:/assets/logo/logo.png"
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Label {
+            text: qsTr(`<h3>%1 %2</h3><br>
+                        Shopping list<br><br>
+                        Based on Qt %3<br>
+                        Build on %4 %5<br><br>
+                        <a href='%6'>%6</a><br><br>Copyright © %7, Vladimir Zarypov`)
+            .arg(app.name).arg(app.version).arg(app.qtVersion)
+            .arg(app.buildDate).arg(app.buildTime)
+            .arg(app.url).arg(app.years)
+
+            onLinkActivated: (link) => Qt.openUrlExternally(link)
+        }
     }
 }

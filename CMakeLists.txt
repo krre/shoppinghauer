@@ -64,6 +64,7 @@ qt_add_qml_module(${PROJECT_NAME}
         assets/icons/square-plus.svg
         assets/icons/checks.svg
         assets/icons/edit.svg
+        assets/logo/logo.png
         qtquickcontrols2.conf
         android/AndroidManifest.xml
 )

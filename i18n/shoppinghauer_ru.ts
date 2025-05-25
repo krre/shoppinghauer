@@ -9,12 +9,12 @@
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/main/AboutDialog.qml" line="17"/>
+        <location filename="../qml/main/AboutDialog.qml" line="27"/>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;
-                    Shopping list&lt;br&gt;&lt;br&gt;
-                    Based on Qt %3&lt;br&gt;
-                    Build on %4 %5&lt;br&gt;&lt;br&gt;
-                    &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
+                        Shopping list&lt;br&gt;&lt;br&gt;
+                        Based on Qt %3&lt;br&gt;
+                        Build on %4 %5&lt;br&gt;&lt;br&gt;
+                        &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
         <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Список покупок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;&lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
     </message>
 </context>
@@ -128,25 +128,21 @@
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
-    <message>
-        <source>Noname</source>
-        <translation type="vanished">Без названия</translation>
-    </message>
 </context>
 <context>
     <name>ShoppingsPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="13"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="14"/>
         <source>Shoppings</source>
         <translation>Покупки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="57"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="58"/>
         <source>Do you want to remove shopping?</source>
         <translation>Вы уверены, что хотите удалить покупку?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="73"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="74"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
