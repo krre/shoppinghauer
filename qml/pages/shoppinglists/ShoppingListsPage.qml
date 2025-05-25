@@ -84,7 +84,7 @@ NamedPage {
                 anchors.margins: 10
 
                 Label {
-                    text: name || qsTr("Noname")
+                    text: Utils.shoppingName(name)
                     font.bold: true
                 }
 

@@ -5,6 +5,7 @@ import QtQuick.Dialogs
 import "../products"
 import "../shoppinglists"
 import "../../components"
+import "../../components/utils.js" as Utils
 import ".."
 
 NamedPage {
@@ -15,7 +16,7 @@ NamedPage {
     StackView.onActivated: {
         const shoppingListParams = database.shoppingList(shoppingListId)
 
-        const name = shoppingListParams.name
+        const name = Utils.shoppingName(shoppingListParams.name)
         const date = new Date(shoppingListParams.shopping_date).toLocaleDateString()
         shoppingListName.text = String("<b>%1</b> - %2").arg(name).arg(date)
 

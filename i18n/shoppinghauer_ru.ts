@@ -73,22 +73,22 @@
 <context>
     <name>ProductsPage</name>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="9"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="10"/>
         <source>Products</source>
         <translation>Продукты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="32"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="53"/>
         <source>Do you want to remove product?</source>
         <translation>Вы уверены, что хотите удалить продукт?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="48"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="69"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="54"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="75"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
@@ -96,12 +96,12 @@
 <context>
     <name>ShoppingListEditorPage</name>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="11"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="28"/>
         <source>Shopping List</source>
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="59"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="130"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -109,47 +109,54 @@
 <context>
     <name>ShoppingListsPage</name>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="10"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="12"/>
         <source>Shopping Lists</source>
         <translation>Списки покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="38"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="40"/>
         <source>Do you want to remove shopping list?</source>
         <translation>Вы уверены, что хотите удалить список покупок?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="54"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="56"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="60"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="62"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListsPage.qml" line="88"/>
         <source>Noname</source>
-        <translation>Без названия</translation>
+        <translation type="vanished">Без названия</translation>
     </message>
 </context>
 <context>
     <name>ShoppingsPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="10"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="13"/>
         <source>Shoppings</source>
         <translation>Покупки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="27"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="57"/>
         <source>Do you want to remove shopping?</source>
         <translation>Вы уверены, что хотите удалить покупку?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="43"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="73"/>
         <source>Remove</source>
         <translation>Удалить</translation>
+    </message>
+</context>
+<context>
+    <name>utils</name>
+    <message>
+        <location filename="../qml/components/utils.js" line="7"/>
+        <source>Noname</source>
+        <translation>Без названия</translation>
     </message>
 </context>
 </TS>
