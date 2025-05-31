@@ -23,14 +23,20 @@ NamedPage {
         shoppingsModel.clear()
 
         for (let params of database.shoppings(shoppingListId)) {
-            shoppingsModel.append({ id: params.id, name: params.name, count: params.count })
+            shoppingsModel.append({ id: params.id, name: params.name, product_id: params.product_id, count: params.count })
         }
     }
 
     toolBar: Row {
         PlusToolButton {
             onClicked: {
-                const productsPage = pushPage(productsPageComp, { "selectMode": true })
+                const hideIds = []
+
+                for (let i = 0; i < shoppingsModel.count; i++) {
+                    hideIds.push(shoppingsModel.get(i).product_id)
+                }
+
+                const productsPage = pushPage(productsPageComp, { "selectMode": true, "hideIds": hideIds })
 
                 productsPage.selected.connect(function(products) {
                     database.insertShoppings(shoppingListId, products)

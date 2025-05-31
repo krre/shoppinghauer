@@ -96,9 +96,9 @@ void Database::removeProduct(int id) {
 
 QVariantList Database::shoppings(int shoppingListId) {
     QSqlQuery query = exec(R"(
-        SELECT s.id, p.name, s.count
+        SELECT s.id, p.name, s.product_id, s.count
         FROM shoppings AS s
-        JOIN products AS p ON s.product_id = p.id
+            JOIN products AS p ON s.product_id = p.id
         WHERE s.shopping_list_id = :shopping_list_id
         ORDER BY p.name ASC
     )", { { "shopping_list_id", shoppingListId } });

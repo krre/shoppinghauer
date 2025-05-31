@@ -7,6 +7,7 @@ import ".."
 NamedPage {
     id: root
     property bool selectMode: false
+    property var hideIds: []
     name: qsTr("Products")
 
     signal selected(var products)
@@ -15,7 +16,9 @@ NamedPage {
         productsModel.clear()
 
         for (let params of database.products()) {
-            productsModel.append({ id: params.id, name: params.name, checked: false })
+            if (!selectMode || hideIds.indexOf(params.id) < 0) {
+                productsModel.append({ id: params.id, name: params.name, checked: false })
+            }
         }
     }
 
