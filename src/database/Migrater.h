@@ -13,6 +13,7 @@ private:
     void setVersion(int version) const;
 
     void migration1() const; // 15.04.2024
+    void migration2() const; // 18.06.2024
 
     Database* m_db = nullptr;
     QHash<int, std::function<void()>> migrations;

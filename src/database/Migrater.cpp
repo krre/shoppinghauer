@@ -2,10 +2,11 @@
 #include "Database.h"
 #include <QSqlQuery>
 
-constexpr auto CurrentVersion = 1;
+constexpr auto CurrentVersion = 2;
 
 Migrater::Migrater(Database* db) : m_db(db) {
     migrations[1] = [this] { migration1(); };
+    migrations[2] = [this] { migration2(); };
 }
 
 void Migrater::run() {
@@ -70,4 +71,9 @@ void Migrater::migration1() const {
 
     m_db->exec("INSERT INTO meta (version) VALUES (0);");
     m_db->exec("CREATE INDEX idx_shoppings_shopping_list_id ON shoppings(shopping_list_id);");
+}
+
+void Migrater::migration2() const {
+    m_db->exec("ALTER TABLE products ADD COLUMN is_archived BOOLEAN NOT NULL DEFAULT 0");
+    m_db->exec("CREATE INDEX idx_products_is_archived ON products(is_archived);");
 }
