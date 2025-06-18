@@ -80,7 +80,11 @@ void Database::updateProduct(int id, const QString& name) {
 }
 
 QVariantList Database::products() {
-    QSqlQuery query = exec("SELECT * FROM products ORDER BY name ASC");
+    QSqlQuery query = exec(R"(
+        SELECT *
+        FROM products
+        WHERE is_archived = false
+        ORDER BY name ASC)");
     return queryToList(&query);
 }
 
