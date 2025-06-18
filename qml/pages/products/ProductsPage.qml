@@ -83,19 +83,16 @@ NamedPage {
 
         MenuItem {
             text: qsTr("Edit")
-
             onClicked: pushPage(productEditorPageComp, { id: productsModel.get(contextMenu.index).id })
         }
 
         MenuItem {
             text: qsTr("Remove")
-
             onClicked: removeDialog.open()
         }
 
         MenuItem {
             text: qsTr("Move to Archive")
-
             onClicked: archiveDialog.open()
         }
     }
@@ -120,7 +117,6 @@ NamedPage {
                 CheckBox {
                     anchors.verticalCenter: parent.verticalCenter
                     visible: selectMode
-
                     onCheckedChanged: productsModel.setProperty(index, "checked", checked)
                 }
 
