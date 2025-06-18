@@ -73,24 +73,34 @@
 <context>
     <name>ProductsPage</name>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="10"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="11"/>
         <source>Products</source>
         <translation>Продукты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="53"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="56"/>
         <source>Do you want to remove product?</source>
         <translation>Вы уверены, что хотите удалить продукт?</translation>
     </message>
     <message>
         <location filename="../qml/pages/products/ProductsPage.qml" line="69"/>
+        <source>Do you want move product to archive?</source>
+        <translation>Вы уверены, что хотите переместить продукт в архив?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="85"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="75"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="91"/>
         <source>Remove</source>
         <translation>Удалить</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="97"/>
+        <source>Move to Archive</source>
+        <translation>Переместить в архив</translation>
     </message>
 </context>
 <context>
@@ -137,12 +147,12 @@
         <translation>Покупки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="58"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="64"/>
         <source>Do you want to remove shopping?</source>
         <translation>Вы уверены, что хотите удалить покупку?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="74"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="80"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>

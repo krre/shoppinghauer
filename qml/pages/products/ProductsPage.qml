@@ -64,6 +64,19 @@ NamedPage {
         }
     }
 
+    MessageDialog {
+        id: archiveDialog
+        text: qsTr("Do you want move product to archive?")
+        buttons: MessageDialog.Yes | MessageDialog.No
+
+        onButtonClicked: function (button, role) {
+            if (button === MessageDialog.No) return
+
+            database.archiveProduct(productsModel.get(contextMenu.index).id, true)
+            productsModel.remove(contextMenu.index)
+        }
+    }
+
     Menu {
         id: contextMenu
         property int index: -1
@@ -78,6 +91,12 @@ NamedPage {
             text: qsTr("Remove")
 
             onClicked: removeDialog.open()
+        }
+
+        MenuItem {
+            text: qsTr("Move to Archive")
+
+            onClicked: archiveDialog.open()
         }
     }
 

@@ -94,6 +94,15 @@ void Database::removeProduct(int id) {
     exec("DELETE FROM products WHERE id = :id", { { "id", id } });
 }
 
+void Database::archiveProduct(int id, bool on) {
+    QVariantMap params = {
+        { "id", id },
+        { "is_archived", on },
+    };
+
+    exec("UPDATE products SET is_archived = :is_archived WHERE id = :id", params);
+}
+
 QVariantList Database::shoppings(int shoppingListId) {
     QSqlQuery query = exec(R"(
         SELECT s.id, p.name, s.product_id, s.count
