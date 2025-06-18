@@ -18,6 +18,7 @@ public:
     Q_INVOKABLE void insertProduct(const QString& name = {});
     Q_INVOKABLE void updateProduct(int id, const QString& name);
     Q_INVOKABLE QVariantList products();
+    Q_INVOKABLE QVariantList allProducts();
     Q_INVOKABLE QVariantMap product(int id) const;
     Q_INVOKABLE void removeProduct(int id);
     Q_INVOKABLE void archiveProduct(int id, bool on);

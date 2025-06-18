@@ -12,15 +12,7 @@ NamedPage {
 
     signal selected(var products)
 
-    StackView.onActivated: {
-        productsModel.clear()
-
-        for (let params of database.products()) {
-            if (!selectMode || hideIds.indexOf(params.id) < 0) {
-                productsModel.append({ id: params.id, name: params.name, checked: false })
-            }
-        }
-    }
+    StackView.onActivated: load()
 
     toolBar: Row {
         StyledToolButton {
@@ -41,8 +33,26 @@ NamedPage {
             }
         }
 
+        StyledCheckBox {
+            id: archive
+            text: qsTr("Archive")
+            visible: !selectMode
+            onCheckedChanged: load()
+        }
+
         PlusToolButton {
             onClicked: pushPage(productEditorPageComp)
+        }
+    }
+
+    function load() {
+        productsModel.clear()
+        const products = archive.checked ? database.allProducts() : database.products()
+
+        for (let params of products) {
+            if (!selectMode || hideIds.indexOf(params.id) < 0) {
+                productsModel.append({ id: params.id, name: params.name, checked: false })
+            }
         }
     }
 

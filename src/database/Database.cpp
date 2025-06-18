@@ -88,6 +88,11 @@ QVariantList Database::products() {
     return queryToList(&query);
 }
 
+QVariantList Database::allProducts() {
+    QSqlQuery query = exec("SELECT * FROM products ORDER BY name ASC");
+    return queryToList(&query);
+}
+
 QVariantMap Database::product(int id) const {
     QSqlQuery query = exec("SELECT * FROM products WHERE id = :id", { { "id", id } });
     query.first();

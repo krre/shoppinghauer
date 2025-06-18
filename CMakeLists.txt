@@ -36,6 +36,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/components/PlusToolButton.qml
         qml/components/EditToolButton.qml
         qml/components/OkButton.qml
+        qml/components/StyledCheckBox.qml
         qml/components/StyledLabel.qml
         qml/components/style.js
         qml/components/utils.js

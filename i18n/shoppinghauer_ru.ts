@@ -78,27 +78,32 @@
         <translation>Продукты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="56"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="38"/>
+        <source>Archive</source>
+        <translation>Архив</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="66"/>
         <source>Do you want to remove product?</source>
         <translation>Вы уверены, что хотите удалить продукт?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="69"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="79"/>
         <source>Do you want move product to archive?</source>
         <translation>Вы уверены, что хотите переместить продукт в архив?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="85"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="95"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="91"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="100"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="97"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="105"/>
         <source>Move to Archive</source>
         <translation>Переместить в архив</translation>
     </message>
