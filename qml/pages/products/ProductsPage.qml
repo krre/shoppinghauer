@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 import QtQuick.Dialogs
 import "../../components"
 import ".."
@@ -86,6 +87,8 @@ NamedPage {
 
             if (!archive.checked) {
                 productsModel.remove(contextMenu.index)
+            } else {
+                productsModel.setProperty(contextMenu.index, "is_archived", 1)
             }
         }
     }
@@ -97,7 +100,9 @@ NamedPage {
 
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
+
             database.archiveProduct(productsModel.get(contextMenu.index).id, false)
+            productsModel.setProperty(contextMenu.index, "is_archived", 0)
         }
     }
 
@@ -141,21 +146,28 @@ NamedPage {
         delegate: BorderDelegate {
             id: delegate
 
-            Row {
+            RowLayout {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.margins: 10
 
                 CheckBox {
-                    anchors.verticalCenter: parent.verticalCenter
                     visible: selectMode
                     onCheckedChanged: productsModel.setProperty(index, "checked", checked)
                 }
 
                 Label  {
-                    anchors.verticalCenter: parent.verticalCenter
                     text: name
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+
+                Image {
+                    visible: is_archived
+                    source:  "qrc:/assets/icons/archive.svg"
                 }
             }
 
