@@ -37,7 +37,6 @@ NamedPage {
         StyledCheckBox {
             id: archive
             text: qsTr("Archive")
-            visible: !selectMode
             onCheckedChanged: load()
         }
 
