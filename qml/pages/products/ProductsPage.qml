@@ -51,7 +51,7 @@ NamedPage {
 
         for (let params of products) {
             if (!selectMode || hideIds.indexOf(params.id) < 0) {
-                productsModel.append({ id: params.id, name: params.name, checked: false })
+                productsModel.append({ id: params.id, name: params.name, is_archived: params.is_archived, checked: false })
             }
         }
     }
@@ -83,13 +83,29 @@ NamedPage {
             if (button === MessageDialog.No) return
 
             database.archiveProduct(productsModel.get(contextMenu.index).id, true)
-            productsModel.remove(contextMenu.index)
+
+            if (!archive.checked) {
+                productsModel.remove(contextMenu.index)
+            }
+        }
+    }
+
+    MessageDialog {
+        id: unarchiveDialog
+        text: qsTr("Do you want return product from archive?")
+        buttons: MessageDialog.Yes | MessageDialog.No
+
+        onButtonClicked: function (button, role) {
+            if (button === MessageDialog.No) return
+            database.archiveProduct(productsModel.get(contextMenu.index).id, false)
         }
     }
 
     Menu {
         id: contextMenu
         property int index: -1
+
+        onAboutToShow: archiveItem.text = productsModel.get(contextMenu.index).is_archived ? qsTr("Return from archive") : qsTr("Move to Archive")
 
         MenuItem {
             text: qsTr("Edit")
@@ -102,8 +118,15 @@ NamedPage {
         }
 
         MenuItem {
-            text: qsTr("Move to Archive")
-            onClicked: archiveDialog.open()
+            id: archiveItem
+
+            onClicked: {
+                if (productsModel.get(contextMenu.index).is_archived) {
+                    unarchiveDialog.open()
+                } else {
+                    archiveDialog.open()
+                }
+            }
         }
     }
 

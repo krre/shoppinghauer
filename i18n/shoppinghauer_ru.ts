@@ -93,19 +93,29 @@
         <translation>Вы уверены, что хотите переместить продукт в архив?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="95"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="92"/>
+        <source>Do you want return product from archive?</source>
+        <translation>Вы уверены, что хотите вернуть продукт из архива?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="108"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="100"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="113"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="105"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="119"/>
         <source>Move to Archive</source>
         <translation>Переместить в архив</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="119"/>
+        <source>Return from archive</source>
+        <translation>Вернуть из архива</translation>
     </message>
 </context>
 <context>
