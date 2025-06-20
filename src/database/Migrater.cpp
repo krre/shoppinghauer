@@ -5,8 +5,8 @@
 constexpr auto CurrentVersion = 2;
 
 Migrater::Migrater(Database* db) : m_db(db) {
-    migrations[1] = [this] { migration1(); };
-    migrations[2] = [this] { migration2(); };
+    m_migrations[1] = [this] { migration1(); };
+    m_migrations[2] = [this] { migration2(); };
 }
 
 void Migrater::run() {
@@ -16,7 +16,7 @@ void Migrater::run() {
 
     for (int i = dbVersion + 1; i <= CurrentVersion; ++i) {
         qInfo() << "Run database migration:" << i;
-        migrations[i]();
+        m_migrations[i]();
     }
 
     setVersion(CurrentVersion);
