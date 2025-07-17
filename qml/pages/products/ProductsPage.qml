@@ -15,6 +15,15 @@ NamedPage {
 
     StackView.onActivated: load()
 
+    menuItems: [
+        {
+            text: qsTr("Archive"),
+            checkable: true,
+            onTriggered: function() {},
+            onCheckedChanged: function(checked) { load(checked) }
+        }
+    ]
+
     toolBar: Row {
         StyledToolButton {
             icon.source: "qrc:/assets/icons/checks.svg"
@@ -34,20 +43,14 @@ NamedPage {
             }
         }
 
-        StyledCheckBox {
-            id: archive
-            text: qsTr("Archive")
-            onCheckedChanged: load()
-        }
-
         PlusToolButton {
             onClicked: pushPage(productEditorPageComp)
         }
     }
 
-    function load() {
+    function load(archived) {
         productsModel.clear()
-        const products = archive.checked ? database.allProducts() : database.products()
+        const products = archived ? database.allProducts() : database.products()
 
         for (let params of products) {
             if (!selectMode || hideIds.indexOf(params.id) < 0) {

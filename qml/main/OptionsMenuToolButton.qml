@@ -40,7 +40,9 @@ StyledToolButton {
 
             MenuItem {
                 text: modelData.text
+                checkable: modelData.hasOwnProperty("checkable") ? modelData.checkable : false
                 onTriggered: modelData.onTriggered()
+                onCheckedChanged: modelData.hasOwnProperty("onCheckedChanged") ? modelData.onCheckedChanged(checked) : {}
             }
 
             onObjectAdded: function(index, object) { optionsMenu.insertItem(index, object) }
