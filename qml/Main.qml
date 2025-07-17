@@ -7,7 +7,7 @@ import "components"
 import "pages/shoppinglists"
 
 ApplicationWindow {
-    id: root
+    id: mainRoot
     title: app.name
     width: 400
     height: 770
@@ -43,7 +43,9 @@ ApplicationWindow {
                 data: stackView.currentItem ? stackView.currentItem.toolBar : []
             }
 
-            OptionsMenuToolButton {}
+            OptionsMenuToolButton {
+                id: optionsMenuButton
+            }
         }
     }
 
@@ -83,5 +85,13 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
+
+        onCurrentItemChanged: {
+            if (stackView.currentItem) {
+                optionsMenuButton.menuItems = stackView.currentItem.menuItems
+            } else {
+                optionsMenuButton.menuItems = []
+            }
+        }
     }
 }

@@ -43,7 +43,6 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/components/BorderDelegate.qml
         qml/components/PageListView.qml
         qml/main/NavigationMenu.qml
-        qml/main/OptionsMenu.qml
         qml/main/OptionsMenuToolButton.qml
         qml/main/AboutDialog.qml
         qml/pages/NamedPage.qml

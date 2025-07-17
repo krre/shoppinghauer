@@ -5,6 +5,7 @@ Page {
     required property string name
     default property alias data: content.data
     property var toolBar: []
+    property var menuItems: []
 
     function pushPage(item, properties, operation) {
         return StackView.view.push(item, properties, operation)
