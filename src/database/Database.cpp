@@ -139,6 +139,15 @@ void Database::removeShopping(int id) {
     exec("DELETE FROM shoppings WHERE id = :id", { { "id", id } });
 }
 
+void Database::setShoppingAmount(int id, int amount) {
+    QVariantMap params = {
+        { "id", id },
+        { "count", amount },
+    };
+
+    exec("UPDATE shoppings SET count = :count WHERE id = :id", params);
+}
+
 QString Database::lastErrorCode() const {
     return m_lastErrorCode;
 }

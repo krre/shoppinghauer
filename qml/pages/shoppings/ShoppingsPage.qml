@@ -72,9 +72,35 @@ NamedPage {
         }
     }
 
+    Dialog {
+        id: amountDialog
+        anchors.centerIn: parent
+        title: qsTr("Amount")
+        standardButtons: Dialog.Ok | Dialog.Cancel
+
+        onAccepted: {
+            database.setShoppingAmount(shoppingsModel.get(contextMenu.index).id, amountSpinBox.value)
+            shoppingsModel.setProperty(contextMenu.index, "count", amountSpinBox.value)
+        }
+
+        SpinBox {
+            id: amountSpinBox
+            from: 1
+        }
+    }
+
     Menu {
         id: contextMenu
         property int index: -1
+
+        MenuItem {
+            text: qsTr("Amount")
+
+            onClicked: {
+                amountSpinBox.value = shoppingsModel.get(contextMenu.index).count
+                amountDialog.open()
+            }
+        }
 
         MenuItem {
             text: qsTr("Remove")
@@ -103,7 +129,7 @@ NamedPage {
             delegate: BorderDelegate {
                 id: delegate
 
-                Column {
+                RowLayout {
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.right: parent.right
@@ -111,6 +137,15 @@ NamedPage {
 
                     Label {
                         text: name
+                    }
+
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
+                    Label {
+                        text: count
+                        visible: count > 1
                     }
                 }
 
