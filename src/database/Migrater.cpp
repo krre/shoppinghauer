@@ -40,7 +40,7 @@ void Migrater::migration1() const {
     m_db->exec(R"(
         CREATE TABLE meta(
             version INTEGER
-        );)"
+        ))"
     );
 
     m_db->exec(R"(
@@ -48,14 +48,14 @@ void Migrater::migration1() const {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             shopping_date TIMESTAMP,
             name TEXT
-        );)"
+        ))"
     );
 
     m_db->exec(R"(
         CREATE TABLE products(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT UNIQUE
-        );)"
+        ))"
     );
 
     m_db->exec(R"(
@@ -67,16 +67,16 @@ void Migrater::migration1() const {
             UNIQUE(shopping_list_id, product_id),
             FOREIGN KEY (shopping_list_id) REFERENCES shopping_lists(id) ON DELETE CASCADE,
             FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-        );)"
+        ))"
     );
 
     m_db->exec("INSERT INTO meta (version) VALUES (0);");
-    m_db->exec("CREATE INDEX idx_shoppings_shopping_list_id ON shoppings(shopping_list_id);");
+    m_db->exec("CREATE INDEX idx_shoppings_shopping_list_id ON shoppings(shopping_list_id)");
 }
 
 void Migrater::migration2() const {
     m_db->exec("ALTER TABLE products ADD COLUMN is_archived BOOLEAN NOT NULL DEFAULT 0");
-    m_db->exec("CREATE INDEX idx_products_is_archived ON products(is_archived);");
+    m_db->exec("CREATE INDEX idx_products_is_archived ON products(is_archived)");
 }
 
 void Migrater::migration3() const {
