@@ -2,11 +2,12 @@
 #include "Database.h"
 #include <QSqlQuery>
 
-constexpr auto CurrentVersion = 2;
+constexpr auto CurrentVersion = 3;
 
 Migrater::Migrater(Database* db) : m_db(db) {
     m_migrations[1] = [this] { migration1(); };
     m_migrations[2] = [this] { migration2(); };
+    m_migrations[3] = [this] { migration3(); };
 }
 
 void Migrater::run() {
@@ -76,4 +77,8 @@ void Migrater::migration1() const {
 void Migrater::migration2() const {
     m_db->exec("ALTER TABLE products ADD COLUMN is_archived BOOLEAN NOT NULL DEFAULT 0");
     m_db->exec("CREATE INDEX idx_products_is_archived ON products(is_archived);");
+}
+
+void Migrater::migration3() const {
+    m_db->exec("ALTER TABLE shoppings RENAME COLUMN count TO amount");
 }

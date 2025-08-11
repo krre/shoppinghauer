@@ -14,6 +14,7 @@ private:
 
     void migration1() const; // 15.04.2025
     void migration2() const; // 18.06.2025
+    void migration3() const; // 11.08.2025
 
     Database* m_db = nullptr;
     QHash<int, std::function<void()>> m_migrations;

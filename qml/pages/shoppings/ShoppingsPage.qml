@@ -23,7 +23,7 @@ NamedPage {
         shoppingsModel.clear()
 
         for (let params of database.shoppings(shoppingListId)) {
-            shoppingsModel.append({ id: params.id, name: params.name, product_id: params.product_id, count: params.count })
+            shoppingsModel.append({ id: params.id, name: params.name, product_id: params.product_id, amount: params.amount })
         }
     }
 
@@ -80,7 +80,7 @@ NamedPage {
 
         onAccepted: {
             database.setShoppingAmount(shoppingsModel.get(contextMenu.index).id, amountSpinBox.value)
-            shoppingsModel.setProperty(contextMenu.index, "count", amountSpinBox.value)
+            shoppingsModel.setProperty(contextMenu.index, "amount", amountSpinBox.value)
         }
 
         SpinBox {
@@ -97,7 +97,7 @@ NamedPage {
             text: qsTr("Amount")
 
             onClicked: {
-                amountSpinBox.value = shoppingsModel.get(contextMenu.index).count
+                amountSpinBox.value = shoppingsModel.get(contextMenu.index).amount
                 amountDialog.open()
             }
         }
@@ -144,8 +144,8 @@ NamedPage {
                     }
 
                     Label {
-                        text: count
-                        visible: count > 1
+                        text: amount
+                        visible: amount > 1
                     }
                 }
 

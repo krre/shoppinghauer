@@ -114,7 +114,7 @@ void Database::archiveProduct(int id, bool on) {
 
 QVariantList Database::shoppings(int shoppingListId) {
     QSqlQuery query = exec(R"(
-        SELECT s.id, p.name, s.product_id, s.count
+        SELECT s.id, p.name, s.product_id, s.amount
         FROM shoppings AS s
             JOIN products AS p ON s.product_id = p.id
         WHERE s.shopping_list_id = :shopping_list_id
@@ -131,7 +131,7 @@ void Database::insertShoppings(int shoppingListId, const QVariantList& productId
             { "product_id", productId.toInt() },
         };
 
-        exec("INSERT INTO shoppings (shopping_list_id, product_id, count) VALUES (:shopping_list_id, :product_id, 1)", params);
+        exec("INSERT INTO shoppings (shopping_list_id, product_id, amount) VALUES (:shopping_list_id, :product_id, 1)", params);
     }
 }
 
@@ -142,10 +142,10 @@ void Database::removeShopping(int id) {
 void Database::setShoppingAmount(int id, int amount) {
     QVariantMap params = {
         { "id", id },
-        { "count", amount },
+        { "amount", amount },
     };
 
-    exec("UPDATE shoppings SET count = :count WHERE id = :id", params);
+    exec("UPDATE shoppings SET amount = :amount WHERE id = :id", params);
 }
 
 QString Database::lastErrorCode() const {
