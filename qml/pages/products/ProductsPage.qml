@@ -8,6 +8,7 @@ import ".."
 NamedPage {
     id: root
     property bool selectMode: false
+    property bool isArchivedChecked: false
     property var hideIds: []
     name: qsTr("Products")
 
@@ -49,6 +50,7 @@ NamedPage {
     }
 
     function load(archived) {
+        isArchivedChecked = archived || false
         productsModel.clear()
         const products = archived ? database.allProducts() : database.products()
 
@@ -87,7 +89,7 @@ NamedPage {
 
             database.archiveProduct(productsModel.get(contextMenu.index).id, true)
 
-            if (!archive.checked) {
+            if (!isArchivedChecked) {
                 productsModel.remove(contextMenu.index)
             } else {
                 productsModel.setProperty(contextMenu.index, "is_archived", 1)
