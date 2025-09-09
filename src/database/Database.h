@@ -8,6 +8,7 @@ public:
     Database(QObject* parent = nullptr);
 
     Q_INVOKABLE void init();
+    bool open();
 
     Q_INVOKABLE void insertShoppingList(const QDate& date, const QString& name = {});
     Q_INVOKABLE void updateShoppingList(int id, const QDate& date, const QString& name);
@@ -29,6 +30,7 @@ public:
     Q_INVOKABLE void setShoppingAmount(int id, int amount);
 
     Q_INVOKABLE QString exportFile();
+    Q_INVOKABLE bool importFile(const QString& filePath);
 
     Q_INVOKABLE QString lastErrorCode() const;
 

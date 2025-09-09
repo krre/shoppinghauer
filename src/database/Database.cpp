@@ -17,16 +17,21 @@ void Database::init() {
 
     dbPath = directory + "/data.db";
     m_db.setDatabaseName(dbPath);
+    open();
+}
 
+bool Database::open() {
     if (!m_db.open()) {
         qCritical().noquote() << "Error opening database:" << m_db.lastError();
-        return;
+        return false;
     }
 
     qInfo().noquote() << "Database opened:" << dbPath;
 
     Migrater migrater(this);
     migrater.run();
+
+    return true;
 }
 
 void Database::insertShoppingList(const QDate& date, const QString& name) {
@@ -159,6 +164,20 @@ QString Database::exportFile() {
     }
 
     return QString();
+}
+
+bool Database::importFile(const QString& filePath) {
+    if (!QFile::exists(filePath)) return false;
+
+    m_db.close();
+
+    QFile::remove(dbPath);
+
+    if (QFile::copy(filePath, dbPath)) {
+        return open();
+    }
+
+    return false;
 }
 
 QString Database::lastErrorCode() const {

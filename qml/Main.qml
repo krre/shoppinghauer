@@ -18,7 +18,7 @@ ApplicationWindow {
         y = (Screen.desktopAvailableHeight - height) / 2
 
         database.init()
-        stackView.push(shoppingListsPage)
+        gotoShoppingLists()
     }
 
     header: ToolBar {
@@ -47,6 +47,11 @@ ApplicationWindow {
                 id: optionsMenuButton
             }
         }
+    }
+
+    function gotoShoppingLists() {
+        stackView.clear()
+        stackView.push(shoppingListsPage)
     }
 
     Database {

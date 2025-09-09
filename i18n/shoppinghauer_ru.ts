@@ -36,17 +36,42 @@
         <translation>Экспорт</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="46"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="47"/>
         <source>Export finished</source>
         <translation>Экспорт завершён</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="46"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="47"/>
         <source>Export error</source>
         <translation>Ошибка экспорта</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="53"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="54"/>
+        <source>Import</source>
+        <translation>Импорт</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="60"/>
+        <source>Select Database</source>
+        <translation>Выберите базу данных</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="61"/>
+        <source>Databases (*.db)</source>
+        <translation>Базы данных (*.db)</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="61"/>
+        <source>All files (*)</source>
+        <translation>Все файлы (*)</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="77"/>
+        <source>Import error</source>
+        <translation>Ошибка импорта</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="84"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>

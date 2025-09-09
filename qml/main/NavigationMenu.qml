@@ -51,6 +51,36 @@ Drawer {
 
         ItemDelegate {
             width: parent.width
+            text: qsTr("Import")
+
+            onClicked: fileDialog.open()
+
+            FileDialog {
+                id: fileDialog
+                title: qsTr("Select Database")
+                nameFilters: [qsTr("Databases (*.db)"), qsTr("All files (*)")]
+                onAccepted: {
+                    const path = String(fileDialog.selectedFile).replace("file://", "")
+                    const success = database.importFile(path)
+
+                    if (success) {
+                        root.close()
+                        gotoShoppingLists()
+                    } else {
+                        importDialog.open()
+                    }
+                }
+            }
+
+            MessageDialog {
+                id: importDialog
+                text: qsTr("Import error")
+                buttons: MessageDialog.Ok
+            }
+        }
+
+        ItemDelegate {
+            width: parent.width
             text: qsTr("Exit")
 
             action: Action {
