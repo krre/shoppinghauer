@@ -1,5 +1,6 @@
 #include "Database.h"
 #include "Migrater.h"
+#include "src/core/Application.h"
 #include <QStandardPaths>
 #include <QSqlQuery>
 #include <QSqlRecord>
@@ -14,15 +15,15 @@ void Database::init() {
     const QString directory = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
     QDir().mkpath(directory);
 
-    const QString name = directory + "/data.db";
-    m_db.setDatabaseName(name);
+    dbPath = directory + "/data.db";
+    m_db.setDatabaseName(dbPath);
 
     if (!m_db.open()) {
         qCritical().noquote() << "Error opening database:" << m_db.lastError();
         return;
     }
 
-    qInfo().noquote() << "Database opened:" << name;
+    qInfo().noquote() << "Database opened:" << dbPath;
 
     Migrater migrater(this);
     migrater.run();
@@ -146,6 +147,18 @@ void Database::setShoppingAmount(int id, int amount) {
     };
 
     exec("UPDATE shoppings SET amount = :amount WHERE id = :id", params);
+}
+
+QString Database::exportFile() {
+    QString exportPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation) + QString("/%1.db").arg(Application::Name);
+    if (QFile::exists(exportPath)) QFile::remove(exportPath);
+
+    if (QFile::copy(dbPath, exportPath)) {
+        qInfo().noquote() << "Database exported:" << exportPath;
+        return exportPath;
+    }
+
+    return QString();
 }
 
 QString Database::lastErrorCode() const {

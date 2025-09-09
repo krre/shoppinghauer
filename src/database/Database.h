@@ -28,6 +28,8 @@ public:
     Q_INVOKABLE void removeShopping(int id);
     Q_INVOKABLE void setShoppingAmount(int id, int amount);
 
+    Q_INVOKABLE QString exportFile();
+
     Q_INVOKABLE QString lastErrorCode() const;
 
     const QSqlDatabase& db() const { return m_db; }
@@ -38,5 +40,6 @@ private:
     QVariantList queryToList(QSqlQuery* query) const;
 
     QSqlDatabase m_db;
+    QString dbPath;
     mutable QString m_lastErrorCode;
 };

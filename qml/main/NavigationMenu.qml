@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Dialogs
 import "../pages/shoppinglists"
 import "../pages/products"
 
@@ -27,6 +28,24 @@ Drawer {
             onClicked: {
                 stackView.push(productsPageComp)
                 root.close()
+            }
+        }
+
+        ItemDelegate {
+            width: parent.width
+            text: qsTr("Export")
+
+            onClicked: {
+                const path = database.exportFile()
+                exportDialog.isSuccess = path !== ""
+                exportDialog.open()
+            }
+
+            MessageDialog {
+                id: exportDialog
+                property bool isSuccess: false
+                text: isSuccess ? qsTr("Export finished") : qsTr("Export error")
+                buttons: MessageDialog.Ok
             }
         }
 
