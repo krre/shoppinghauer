@@ -34,6 +34,7 @@ Drawer {
         ItemDelegate {
             width: parent.width
             text: qsTr("Export")
+            visible: false
 
             onClicked: {
                 const path = database.exportFile()
@@ -53,6 +54,7 @@ Drawer {
         ItemDelegate {
             width: parent.width
             text: qsTr("Import")
+            visible: false
 
             onClicked: fileDialog.open()
 
