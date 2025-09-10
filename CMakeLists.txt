@@ -97,6 +97,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 include(GNUInstallDirs)
+
 install(TARGETS ${PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
