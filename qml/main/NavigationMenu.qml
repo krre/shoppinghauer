@@ -37,6 +37,7 @@ Drawer {
 
             onClicked: {
                 const path = database.exportFile()
+                root.close()
                 exportDialog.isSuccess = path !== ""
                 exportDialog.open()
             }
@@ -62,9 +63,9 @@ Drawer {
                 onAccepted: {
                     const path = String(fileDialog.selectedFile).replace("file://", "")
                     const success = database.importFile(path)
+                    root.close()
 
                     if (success) {
-                        root.close()
                         gotoShoppingLists()
                     } else {
                         importDialog.open()
