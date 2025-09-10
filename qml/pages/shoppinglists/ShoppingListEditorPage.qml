@@ -48,6 +48,15 @@ NamedPage {
             DayOfWeekRow {
                 width: parent.width
                 locale: grid.locale
+
+                delegate: Label {
+                    text: shortName
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+
+                    required property string shortName
+                }
+
             }
 
             MonthGrid {
@@ -74,10 +83,10 @@ NamedPage {
                         return "transparent"
                     }
 
-                    Text {
+                    Label {
                         anchors.centerIn: parent
                         text: model.day
-                        color: isSelected ? "white" : "black"
+                        color: isSelected ? "white" : Material.foreground
                     }
                 }
 

@@ -75,7 +75,7 @@ NamedPage {
 
         delegate: BorderDelegate {
             id: delegate
-            color: new Date(date) < Utils.today() ? Style.passedTimeColor : "white"
+            color: new Date(date) < Utils.today() ? Style.passedTimeColor : Material.backgroundColor
 
             Column {
                 anchors.verticalCenter: parent.verticalCenter
