@@ -72,7 +72,7 @@ NamedPage {
         }
     }
 
-    Dialog {
+    StyledDialog {
         id: amountDialog
         anchors.centerIn: parent
         title: qsTr("Amount")

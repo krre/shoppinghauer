@@ -32,24 +32,25 @@ qt_add_qml_module(${PROJECT_NAME}
 
     QML_FILES
         qml/Main.qml
-        qml/components/StyledToolButton.qml
-        qml/components/PlusToolButton.qml
+        qml/components/BorderDelegate.qml
         qml/components/EditToolButton.qml
         qml/components/OkButton.qml
+        qml/components/PageListView.qml
+        qml/components/PlusToolButton.qml
         qml/components/StyledCheckBox.qml
+        qml/components/StyledDialog.qml
         qml/components/StyledLabel.qml
+        qml/components/StyledToolButton.qml
         qml/components/style.js
         qml/components/utils.js
-        qml/components/BorderDelegate.qml
-        qml/components/PageListView.qml
+        qml/main/AboutDialog.qml
         qml/main/NavigationMenu.qml
         qml/main/OptionsMenuToolButton.qml
-        qml/main/AboutDialog.qml
         qml/pages/NamedPage.qml
-        qml/pages/shoppinglists/ShoppingListsPage.qml
-        qml/pages/shoppinglists/ShoppingListEditorPage.qml
-        qml/pages/products/ProductsPage.qml
         qml/pages/products/ProductEditorPage.qml
+        qml/pages/products/ProductsPage.qml
+        qml/pages/shoppinglists/ShoppingListEditorPage.qml
+        qml/pages/shoppinglists/ShoppingListsPage.qml
         qml/pages/shoppings/ShoppingsPage.qml
 
     SOURCES

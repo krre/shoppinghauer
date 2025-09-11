@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Controls
+import "../components"
 
-Dialog {
+StyledDialog {
     id: root
     anchors.centerIn: parent
     modal: true
