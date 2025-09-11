@@ -9,6 +9,7 @@ import "pages/shoppinglists"
 
 ApplicationWindow {
     id: mainRoot
+    property int theme: Material.theme
     title: app.name
     width: 400
     height: 770
