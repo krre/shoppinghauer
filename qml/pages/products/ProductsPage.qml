@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import QtQuick.Effects
 import "../../components"
 import ".."
 
@@ -170,8 +171,14 @@ NamedPage {
                 }
 
                 Image {
-                    visible: is_archived
                     source:  "qrc:/assets/icons/archive.svg"
+                    visible: is_archived
+                    layer.enabled: true
+                    layer.effect: MultiEffect {
+                        brightness: 1.0
+                        colorization: 1.0
+                        colorizationColor: Material.foreground
+                    }
                 }
             }
 
