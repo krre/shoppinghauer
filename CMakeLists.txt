@@ -37,7 +37,6 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/components/OkButton.qml
         qml/components/PageListView.qml
         qml/components/PlusToolButton.qml
-        qml/components/style/StyledCheckBox.qml
         qml/components/style/StyledDialog.qml
         qml/components/style/StyledLabel.qml
         qml/components/style/StyledToolButton.qml
