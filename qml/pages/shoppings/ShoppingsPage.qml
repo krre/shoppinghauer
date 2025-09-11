@@ -5,6 +5,7 @@ import QtQuick.Dialogs
 import "../products"
 import "../shoppinglists"
 import "../../components"
+import "../../components/style"
 import "../../components/utils.js" as Utils
 import ".."
 

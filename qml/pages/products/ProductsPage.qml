@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Effects
 import "../../components"
+import "../../components/style"
 import ".."
 
 NamedPage {

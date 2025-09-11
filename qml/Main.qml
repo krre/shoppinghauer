@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import Shoppinghauer
 import "main"
 import "components"
+import "components/style"
 import "pages/shoppinglists"
 
 ApplicationWindow {

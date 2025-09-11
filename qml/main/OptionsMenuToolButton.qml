@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import "../components"
+import "../components/style"
 
 StyledToolButton {
     id: root

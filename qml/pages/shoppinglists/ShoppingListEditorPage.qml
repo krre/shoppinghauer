@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import "../../components"
-import "../../components/style.js" as Style
+import "../../components/style/style.js" as Style
 import "../../components/utils.js" as Utils
 import ".."
 

@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Dialogs
 import "../shoppings"
 import "../../components"
-import "../../components/style.js" as Style
+import "../../components/style/style.js" as Style
 import "../../components/utils.js" as Utils
 import ".."
 

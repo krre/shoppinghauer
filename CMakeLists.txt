@@ -37,11 +37,11 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/components/OkButton.qml
         qml/components/PageListView.qml
         qml/components/PlusToolButton.qml
-        qml/components/StyledCheckBox.qml
-        qml/components/StyledDialog.qml
-        qml/components/StyledLabel.qml
-        qml/components/StyledToolButton.qml
-        qml/components/style.js
+        qml/components/style/StyledCheckBox.qml
+        qml/components/style/StyledDialog.qml
+        qml/components/style/StyledLabel.qml
+        qml/components/style/StyledToolButton.qml
+        qml/components/style/style.js
         qml/components/utils.js
         qml/main/AboutDialog.qml
         qml/main/NavigationMenu.qml
