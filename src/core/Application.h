@@ -17,7 +17,7 @@ public:
     static constexpr auto Version = PROJECT_VERSION;
     static constexpr auto QtVersion = QT_VERSION_STR;
     static constexpr auto Url = "https://github.com/krre/shoppinghauer";
-    static constexpr auto Years = "2025";
+    static constexpr auto Years = "2025-2026";
     static constexpr auto BuildDate = __DATE__;
     static constexpr auto BuildTime = __TIME__;
 
