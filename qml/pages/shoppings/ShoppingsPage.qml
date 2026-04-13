@@ -151,7 +151,6 @@ NamedPage {
                 }
 
                 TapHandler {
-                    id: tapHandler
                     gesturePolicy: TapHandler.ReleaseWithinBounds
 
                     onLongPressed: {

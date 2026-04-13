@@ -94,7 +94,6 @@ NamedPage {
             }
 
             TapHandler {
-                id: tapHandler
                 gesturePolicy: TapHandler.ReleaseWithinBounds
 
                 onTapped: pushPage(shoppingsPageComp, { shoppingListId: shoppingListsModel.get(index).id })
