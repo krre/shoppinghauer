@@ -34,13 +34,13 @@ bool Database::open() {
     return true;
 }
 
-void Database::insertShoppingList(const QDate& date, const QString& name) {
+int Database::insertShoppingList(const QDate& date, const QString& name) {
     QVariantMap params = {
         { "shopping_date", date },
         { "name", name },
     };
 
-    exec("INSERT INTO shopping_lists (shopping_date, name) VALUES (:shopping_date, :name)", params);
+    return exec("INSERT INTO shopping_lists (shopping_date, name) VALUES (:shopping_date, :name)", params).lastInsertId().toInt();
 }
 
 void Database::updateShoppingList(int id, const QDate& date, const QString& name) {

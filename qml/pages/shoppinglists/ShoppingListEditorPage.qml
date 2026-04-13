@@ -25,12 +25,26 @@ NamedPage {
         const index = calendarModel.indexOf(selectedDate.getFullYear(), selectedDate.getMonth())
         listView.positionViewAtIndex(index, ListView.Visible)
         listView.currentIndex = index
+
+        if (id == 0) {
+            templatesModel.append({ id: 0, name: qsTr("Without template") })
+
+            for (let params of database.templates()) {
+                templatesModel.append({ id: params.id, name: params.name })
+            }
+
+            templatesComboBox.currentIndex = 0
+        }
     }
 
     Loader {
         id: delegateLoader
         sourceComponent: delegateComponent
         visible: false
+    }
+
+    ListModel {
+        id: templatesModel
     }
 
     Component {
@@ -141,6 +155,15 @@ NamedPage {
             Component.onCompleted: forceActiveFocus()
         }
 
+        ComboBox {
+            id: templatesComboBox
+            Layout.fillWidth: true
+            model: templatesModel
+            textRole: "name"
+            valueRole: "id"
+            visible: id == 0
+        }
+
         OkButton {
             Layout.alignment: Qt.AlignRight
 
@@ -148,7 +171,18 @@ NamedPage {
                 if (id > 0) {
                     database.updateShoppingList(id, selectedDate, name.text)
                 } else if (selectedDate) {
-                    database.insertShoppingList(selectedDate, name.text)
+                    const shoppingListId = database.insertShoppingList(selectedDate, name.text)
+                    const templateId = templatesComboBox.currentValue
+
+                    if (templateId > 0) {
+                        const products = []
+
+                        for (let params of database.templateProducts(templateId)) {
+                            products.push(params.product_id)
+                        }
+
+                        database.insertShoppings(shoppingListId, products)
+                    }
                 }
 
                 popPage()

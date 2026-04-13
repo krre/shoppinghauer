@@ -10,7 +10,7 @@ public:
     Q_INVOKABLE void init();
     bool open();
 
-    Q_INVOKABLE void insertShoppingList(const QDate& date, const QString& name = {});
+    Q_INVOKABLE int insertShoppingList(const QDate& date, const QString& name = {});
     Q_INVOKABLE void updateShoppingList(int id, const QDate& date, const QString& name);
     Q_INVOKABLE QVariantList shoppingLists();
     Q_INVOKABLE QVariantMap shoppingList(int id) const;

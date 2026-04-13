@@ -173,12 +173,17 @@
 <context>
     <name>ShoppingListEditorPage</name>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="28"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="22"/>
         <source>Shopping List</source>
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="139"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="30"/>
+        <source>Without template</source>
+        <translation>Без шаблона</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="153"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
