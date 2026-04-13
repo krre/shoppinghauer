@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Dialogs
 import "../pages/shoppinglists"
 import "../pages/products"
+import "../pages/templates"
 
 Drawer {
     id: root
@@ -27,6 +28,16 @@ Drawer {
 
             onClicked: {
                 stackView.push(productsPageComp)
+                root.close()
+            }
+        }
+
+        ItemDelegate {
+            width: parent.width
+            text: qsTr("Templates")
+
+            onClicked: {
+                stackView.push(templatesPageComp)
                 root.close()
             }
         }
@@ -101,5 +112,10 @@ Drawer {
     Component {
         id: productsPageComp
         ProductsPage {}
+    }
+
+    Component {
+        id: templatesPageComp
+        TemplatesPage {}
     }
 }

@@ -4,12 +4,12 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/main/AboutDialog.qml" line="9"/>
+        <location filename="../qml/main/AboutDialog.qml" line="10"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/main/AboutDialog.qml" line="27"/>
+        <location filename="../qml/main/AboutDialog.qml" line="28"/>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;
                         Shopping list&lt;br&gt;&lt;br&gt;
                         Based on Qt %3&lt;br&gt;
@@ -21,57 +21,62 @@
 <context>
     <name>NavigationMenu</name>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="15"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="16"/>
         <source>Shopping Lists</source>
         <translation>Списки покупок</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="26"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="27"/>
         <source>Products</source>
         <translation>Продукты</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="36"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="37"/>
+        <source>Templates</source>
+        <translation>Шаблоны</translation>
+    </message>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="47"/>
         <source>Export</source>
         <translation>Экспорт</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="47"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="60"/>
         <source>Export finished</source>
         <translation>Экспорт завершён</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="47"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="60"/>
         <source>Export error</source>
         <translation>Ошибка экспорта</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="54"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="67"/>
         <source>Import</source>
         <translation>Импорт</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="60"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="74"/>
         <source>Select Database</source>
         <translation>Выберите базу данных</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="61"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="75"/>
         <source>Databases (*.db)</source>
         <translation>Базы данных (*.db)</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="61"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="75"/>
         <source>All files (*)</source>
         <translation>Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="77"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="91"/>
         <source>Import error</source>
         <translation>Ошибка импорта</translation>
     </message>
     <message>
-        <location filename="../qml/main/NavigationMenu.qml" line="84"/>
+        <location filename="../qml/main/NavigationMenu.qml" line="98"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -94,7 +99,7 @@
 <context>
     <name>OptionsMenuToolButton</name>
     <message>
-        <location filename="../qml/main/OptionsMenuToolButton.qml" line="22"/>
+        <location filename="../qml/main/OptionsMenuToolButton.qml" line="23"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
@@ -120,47 +125,47 @@
 <context>
     <name>ProductsPage</name>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="13"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="15"/>
         <source>Products</source>
         <translation>Продукты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="21"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="23"/>
         <source>Archive</source>
         <translation>Архив</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="71"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="73"/>
         <source>Do you want to remove product?</source>
         <translation>Вы уверены, что хотите удалить продукт?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="84"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="86"/>
         <source>Do you want move product to archive?</source>
         <translation>Вы уверены, что хотите переместить продукт в архив?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="102"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="104"/>
         <source>Do you want return product from archive?</source>
         <translation>Вы уверены, что хотите вернуть продукт из архива?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="120"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="122"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="125"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="127"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="117"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="119"/>
         <source>Move to Archive</source>
         <translation>Переместить в архив</translation>
     </message>
     <message>
-        <location filename="../qml/pages/products/ProductsPage.qml" line="117"/>
+        <location filename="../qml/pages/products/ProductsPage.qml" line="119"/>
         <source>Return from archive</source>
         <translation>Вернуть из архива</translation>
     </message>
@@ -173,7 +178,7 @@
         <translation>Список покупок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="130"/>
+        <location filename="../qml/pages/shoppinglists/ShoppingListEditorPage.qml" line="139"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -204,23 +209,46 @@
 <context>
     <name>ShoppingsPage</name>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="14"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="15"/>
         <source>Shoppings</source>
         <translation>Покупки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="64"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="65"/>
         <source>Do you want to remove shopping?</source>
         <translation>Вы уверены, что хотите удалить покупку?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="78"/>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="97"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="79"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="98"/>
         <source>Amount</source>
         <translation>Количество</translation>
     </message>
     <message>
-        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="106"/>
+        <location filename="../qml/pages/shoppings/ShoppingsPage.qml" line="107"/>
+        <source>Remove</source>
+        <translation>Удалить</translation>
+    </message>
+</context>
+<context>
+    <name>TemplatesPage</name>
+    <message>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="9"/>
+        <source>Templates</source>
+        <translation>Шаблоны</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="34"/>
+        <source>Do you want to remove template?</source>
+        <translation>Вы уверены, что хотите удалить шаблон?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="50"/>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="56"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>

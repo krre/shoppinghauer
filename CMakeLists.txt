@@ -51,6 +51,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/shoppinglists/ShoppingListEditorPage.qml
         qml/pages/shoppinglists/ShoppingListsPage.qml
         qml/pages/shoppings/ShoppingsPage.qml
+        qml/pages/templates/TemplatesPage.qml
 
     SOURCES
         src/core/Application.cpp src/core/Application.h
