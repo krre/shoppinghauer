@@ -231,6 +231,24 @@
     </message>
 </context>
 <context>
+    <name>TemplateEditorPage</name>
+    <message>
+        <location filename="../qml/pages/templates/TemplateEditorPage.qml" line="11"/>
+        <source>Template</source>
+        <translation>Шаблон</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplateEditorPage.qml" line="22"/>
+        <source>Template already exists</source>
+        <translation>Шаблон уже существует</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplateEditorPage.qml" line="33"/>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+</context>
+<context>
     <name>TemplatesPage</name>
     <message>
         <location filename="../qml/pages/templates/TemplatesPage.qml" line="9"/>
@@ -238,17 +256,17 @@
         <translation>Шаблоны</translation>
     </message>
     <message>
-        <location filename="../qml/pages/templates/TemplatesPage.qml" line="34"/>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="33"/>
         <source>Do you want to remove template?</source>
         <translation>Вы уверены, что хотите удалить шаблон?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/templates/TemplatesPage.qml" line="50"/>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="49"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/templates/TemplatesPage.qml" line="56"/>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="55"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>

@@ -25,8 +25,7 @@ NamedPage {
     Component {
         id: templateEditorPageComp
 
-        Item {}
-    //     TemplateEditorPage {}
+        TemplateEditorPage {}
     }
 
     MessageDialog {
