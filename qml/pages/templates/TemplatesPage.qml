@@ -11,9 +11,9 @@ NamedPage {
     StackView.onActivated: {
         templatesModel.clear()
 
-    //     for (let params of database.templates()) {
-    //         templatesModel.append({ id: params.id, name: params.name })
-    //     }
+        for (let params of database.templates()) {
+            templatesModel.append({ id: params.id, name: params.name })
+        }
     }
 
     toolBar: Row {
@@ -36,7 +36,7 @@ NamedPage {
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
 
-    //         database.removeTemplate(templatesModel.get(contextMenu.index).id)
+            database.removeTemplate(templatesModel.get(contextMenu.index).id)
             templatesModel.remove(contextMenu.index)
         }
     }

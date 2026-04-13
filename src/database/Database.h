@@ -29,6 +29,12 @@ public:
     Q_INVOKABLE void removeShopping(int id);
     Q_INVOKABLE void setShoppingAmount(int id, int amount);
 
+    Q_INVOKABLE QVariantList templates();
+    Q_INVOKABLE void insertTemplate(const QString& name);
+    Q_INVOKABLE void updateTemplate(int id, const QString& name);
+    Q_INVOKABLE QVariantMap templateRecord(int id);
+    Q_INVOKABLE void removeTemplate(int id);
+
     Q_INVOKABLE QString exportFile();
     Q_INVOKABLE bool importFile(const QString& filePath);
 

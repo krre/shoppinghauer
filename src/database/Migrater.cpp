@@ -2,12 +2,13 @@
 #include "Database.h"
 #include <QSqlQuery>
 
-constexpr auto CurrentVersion = 3;
+constexpr auto CurrentVersion = 4;
 
 Migrater::Migrater(Database* db) : m_db(db) {
     m_migrations[1] = [this] { migration1(); };
     m_migrations[2] = [this] { migration2(); };
     m_migrations[3] = [this] { migration3(); };
+    m_migrations[4] = [this] { migration4(); };
 }
 
 void Migrater::run() {
@@ -81,4 +82,13 @@ void Migrater::migration2() const {
 
 void Migrater::migration3() const {
     m_db->exec("ALTER TABLE shoppings RENAME COLUMN count TO amount");
+}
+
+void Migrater::migration4() const {
+    m_db->exec(R"(
+        CREATE TABLE templates(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE
+        ))"
+    );
 }

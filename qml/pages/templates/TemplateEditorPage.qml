@@ -12,8 +12,8 @@ NamedPage {
 
     Component.onCompleted: {
         if (id > 0) {
-            // const params = database.template(id)
-            // name.text = params.name
+            const params = database.templateRecord(id)
+            name.text = params.name
         }
     }
 
@@ -45,9 +45,9 @@ NamedPage {
                 }
 
                 if (id > 0) {
-                    // database.updateTemplate(id, name.text)
+                    database.updateTemplate(id, name.text)
                 } else {
-                    // database.insertTemplate(name.text)
+                    database.insertTemplate(name.text)
                 }
 
                 const CONSTRAINT_UNIQUE = "2067"

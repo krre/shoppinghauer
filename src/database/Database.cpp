@@ -154,6 +154,38 @@ void Database::setShoppingAmount(int id, int amount) {
     exec("UPDATE shoppings SET amount = :amount WHERE id = :id", params);
 }
 
+QVariantList Database::templates() {
+    QSqlQuery query = exec("SELECT * FROM templates ORDER BY name ASC");
+    return queryToList(&query);
+}
+
+void Database::insertTemplate(const QString& name) {
+    QVariantMap params = {
+        { "name", name },
+    };
+
+    exec("INSERT INTO templates (name) VALUES (:name)", params);
+}
+
+void Database::updateTemplate(int id, const QString& name) {
+    QVariantMap params = {
+        { "id", id },
+        { "name", name },
+    };
+
+    exec("UPDATE templates SET name = :name WHERE id = :id", params);
+}
+
+QVariantMap Database::templateRecord(int id) {
+    QSqlQuery query = exec("SELECT * FROM templates WHERE id = :id", { { "id", id } });
+    query.first();
+    return queryToMap(&query);
+}
+
+void Database::removeTemplate(int id) {
+    exec("DELETE FROM templates WHERE id = :id", { { "id", id } });
+}
+
 QString Database::exportFile() {
     QString exportPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation) + QString("/%1.db").arg(Application::Name);
     if (QFile::exists(exportPath)) QFile::remove(exportPath);
