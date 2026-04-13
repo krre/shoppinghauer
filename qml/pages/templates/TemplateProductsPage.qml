@@ -15,9 +15,9 @@ NamedPage {
         templateName.text = String("<b>%1</b>").arg(database.templateRecord(templateId).name)
         templateProductsModel.clear()
 
-        // for (let params of database.templateProducts(templateId)) {
-        //     templateProductsModel.append({ id: params.id, name: params.name, product_id: params.product_id })
-        // }
+        for (let params of database.templateProducts(templateId)) {
+            templateProductsModel.append({ id: params.id, name: params.name, product_id: params.product_id })
+        }
     }
 
     toolBar: Row {
@@ -32,7 +32,7 @@ NamedPage {
                 const productsPage = pushPage(productsPageComp, { "selectMode": true, "hideIds": hideIds })
 
                 productsPage.selected.connect(function(products) {
-                //     database.insertTemplateProducts(templateId, products)
+                    database.insertTemplateProducts(templateId, products)
                 })
             }
         }
@@ -51,7 +51,7 @@ NamedPage {
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
 
-            // database.removeTemplateProduct(templateProductsModel.get(contextMenu.index).id)
+            database.removeTemplateProduct(templateProductsModel.get(contextMenu.index).id)
             templateProductsModel.remove(contextMenu.index)
         }
     }

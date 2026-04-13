@@ -35,6 +35,10 @@ public:
     Q_INVOKABLE QVariantMap templateRecord(int id);
     Q_INVOKABLE void removeTemplate(int id);
 
+    Q_INVOKABLE QVariantList templateProducts(int templateId);
+    Q_INVOKABLE void insertTemplateProducts(int templateId, const QVariantList& productIds);
+    Q_INVOKABLE void removeTemplateProduct(int id);
+
     Q_INVOKABLE QString exportFile();
     Q_INVOKABLE bool importFile(const QString& filePath);
 

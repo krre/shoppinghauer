@@ -186,6 +186,33 @@ void Database::removeTemplate(int id) {
     exec("DELETE FROM templates WHERE id = :id", { { "id", id } });
 }
 
+QVariantList Database::templateProducts(int templateId) {
+    QSqlQuery query = exec(R"(
+        SELECT tp.id, p.name, tp.product_id
+        FROM template_products AS tp
+            JOIN products AS p ON tp.product_id = p.id
+        WHERE tp.template_id = :template_id
+        ORDER BY p.name ASC
+    )", { { "template_id", templateId } });
+
+    return queryToList(&query);
+}
+
+void Database::insertTemplateProducts(int templateId, const QVariantList& productIds) {
+    for (const auto& productId : productIds) {
+        QVariantMap params = {
+            { "template_id", templateId },
+            { "product_id", productId.toInt() },
+        };
+
+        exec("INSERT INTO template_products (template_id, product_id) VALUES (:template_id, :product_id)", params);
+    }
+}
+
+void Database::removeTemplateProduct(int id) {
+    exec("DELETE FROM template_products WHERE id = :id", { { "id", id } });
+}
+
 QString Database::exportFile() {
     QString exportPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation) + QString("/%1.db").arg(Application::Name);
     if (QFile::exists(exportPath)) QFile::remove(exportPath);

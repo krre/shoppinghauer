@@ -91,4 +91,15 @@ void Migrater::migration4() const {
             name TEXT UNIQUE
         ))"
     );
+
+    m_db->exec(R"(
+        CREATE TABLE template_products(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            template_id INTEGER,
+            product_id INTEGER,
+            UNIQUE(template_id, product_id),
+            FOREIGN KEY (template_id) REFERENCES templates(id) ON DELETE CASCADE,
+            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+        ))"
+    );
 }
