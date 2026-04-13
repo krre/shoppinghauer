@@ -8,6 +8,7 @@ import ".."
 
 NamedPage {
     id: root
+    property int id: 0
     property date selectedDate: {
         if (id > 0) {
             const params = database.shoppingList(id)
@@ -18,14 +19,13 @@ NamedPage {
         }
     }
 
+    name: qsTr("Shopping List")
+
     Component.onCompleted: {
         const index = calendarModel.indexOf(selectedDate.getFullYear(), selectedDate.getMonth())
         listView.positionViewAtIndex(index, ListView.Visible)
         listView.currentIndex = index
     }
-
-    property int id: 0
-    name: qsTr("Shopping List")
 
     Loader {
         id: delegateLoader
