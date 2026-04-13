@@ -28,6 +28,12 @@ NamedPage {
         TemplateEditorPage {}
     }
 
+    Component {
+        id: templateProductsPageComp
+
+        TemplateProductsPage {}
+    }
+
     MessageDialog {
         id: removeDialog
         text: qsTr("Do you want to remove template?")
@@ -83,7 +89,7 @@ NamedPage {
             TapHandler {
                 gesturePolicy: TapHandler.ReleaseWithinBounds
 
-                onTapped: pushPage(templateEditorPageComp, { templateId: templatesModel.get(index).id })
+                onTapped: pushPage(templateProductsPageComp, { templateId: templatesModel.get(index).id })
 
                 onLongPressed: {
                     contextMenu.index = index

@@ -52,6 +52,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/shoppinglists/ShoppingListsPage.qml
         qml/pages/shoppings/ShoppingsPage.qml
         qml/pages/templates/TemplateEditorPage.qml
+        qml/pages/templates/TemplateProductsPage.qml
         qml/pages/templates/TemplatesPage.qml
 
     SOURCES

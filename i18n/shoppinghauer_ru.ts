@@ -249,6 +249,28 @@
     </message>
 </context>
 <context>
+    <name>TemplateProductsPage</name>
+    <message>
+        <source>Template</source>
+        <translation type="vanished">Шаблон</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplateProductsPage.qml" line="12"/>
+        <source>Template products</source>
+        <translation>Продукты шаблона</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplateProductsPage.qml" line="48"/>
+        <source>Do you want to remove product?</source>
+        <translation>Вы уверены, что хотите удалить продукт?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/templates/TemplateProductsPage.qml" line="64"/>
+        <source>Remove</source>
+        <translation>Удалить</translation>
+    </message>
+</context>
+<context>
     <name>TemplatesPage</name>
     <message>
         <location filename="../qml/pages/templates/TemplatesPage.qml" line="9"/>
@@ -256,17 +278,17 @@
         <translation>Шаблоны</translation>
     </message>
     <message>
-        <location filename="../qml/pages/templates/TemplatesPage.qml" line="33"/>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="39"/>
         <source>Do you want to remove template?</source>
         <translation>Вы уверены, что хотите удалить шаблон?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/templates/TemplatesPage.qml" line="49"/>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="55"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/templates/TemplatesPage.qml" line="55"/>
+        <location filename="../qml/pages/templates/TemplatesPage.qml" line="61"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
