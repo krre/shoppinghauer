@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 4.3)
 
 project(shoppinghauer VERSION 1.6.0 LANGUAGES CXX)
 
