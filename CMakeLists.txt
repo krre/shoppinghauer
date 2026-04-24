@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.3)
 
-project(shoppinghauer VERSION 1.6.0 LANGUAGES CXX)
+project(shoppinghauer VERSION 1.6.0)
 
 set(PROJECT_TITLE Shoppinghauer)
 
