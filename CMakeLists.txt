@@ -3,7 +3,10 @@ cmake_minimum_required(VERSION 4.0)
 project(shoppinghauer VERSION 1.6.0 LANGUAGES CXX)
 
 set(PROJECT_TITLE Shoppinghauer)
+
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(REQUIRED_QT_VERSION 6.11.0)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS
