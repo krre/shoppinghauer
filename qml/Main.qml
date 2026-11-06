@@ -16,8 +16,10 @@ ApplicationWindow {
     visible: true
 
     Component.onCompleted: {
-        x = (Screen.desktopAvailableWidth - width) / 2
-        y = (Screen.desktopAvailableHeight - height) / 2
+        if (Qt.platform.os !== "android" && Qt.platform.os !== "ios") {
+            x = Screen.virtualX + (Screen.width - width) / 2
+            y = Screen.virtualY + (Screen.height - height) / 2
+        }
 
         database.init()
         gotoShoppingLists()
