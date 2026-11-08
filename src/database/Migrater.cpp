@@ -2,26 +2,35 @@
 #include "Database.h"
 #include <QSqlQuery>
 
-constexpr auto CurrentVersion = 4;
+#define MIGRATION(ver) \
+    m_migrations.append({ ver, [this] { migration##ver(); } })
 
 Migrater::Migrater(Database* db) : m_db(db) {
-    m_migrations[1] = [this] { migration1(); };
-    m_migrations[2] = [this] { migration2(); };
-    m_migrations[3] = [this] { migration3(); };
-    m_migrations[4] = [this] { migration4(); };
+    MIGRATION(20250415);
+    MIGRATION(20250618);
+    MIGRATION(20250811);
+    MIGRATION(20260413);
 }
 
-void Migrater::run() {
+void Migrater::run() const {
     int dbVersion = version();
+    const int latestVersion = m_migrations.last().version;
 
-    if (dbVersion == CurrentVersion) return;
+    if (dbVersion >= latestVersion) return;
 
-    for (int i = dbVersion + 1; i <= CurrentVersion; ++i) {
-        qInfo() << "Run database migration:" << i;
-        m_migrations[i]();
+    // Backward compatibility
+    if (dbVersion == 4) {
+        setVersion(latestVersion);
+        return;
     }
 
-    setVersion(CurrentVersion);
+    for (const auto& migration: m_migrations) {
+        if (migration.version <= dbVersion) continue;
+
+        qInfo() << "Run database migration:" << migration.version;
+        migration.fn();
+        setVersion(migration.version);
+    }
 }
 
 int Migrater::version() const {
@@ -37,7 +46,7 @@ void Migrater::setVersion(int version) const {
     m_db->exec("UPDATE meta SET version = :version", { { "version", version } });
 }
 
-void Migrater::migration1() const {
+void Migrater::migration20250415() const {
     m_db->exec(R"(
         CREATE TABLE meta(
             version INTEGER
@@ -75,16 +84,16 @@ void Migrater::migration1() const {
     m_db->exec("CREATE INDEX idx_shoppings_shopping_list_id ON shoppings(shopping_list_id)");
 }
 
-void Migrater::migration2() const {
+void Migrater::migration20250618() const {
     m_db->exec("ALTER TABLE products ADD COLUMN is_archived BOOLEAN NOT NULL DEFAULT 0");
     m_db->exec("CREATE INDEX idx_products_is_archived ON products(is_archived)");
 }
 
-void Migrater::migration3() const {
+void Migrater::migration20250811() const {
     m_db->exec("ALTER TABLE shoppings RENAME COLUMN count TO amount");
 }
 
-void Migrater::migration4() const {
+void Migrater::migration20260413() const {
     m_db->exec(R"(
         CREATE TABLE templates(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
