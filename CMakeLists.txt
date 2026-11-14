@@ -76,12 +76,21 @@ qt_add_qml_module(${PROJECT_NAME}
         android/AndroidManifest.xml
 )
 
+
+option(SHOPPINGHAUER_LUPDATE_NO_OBSOLETE "Remove obsolete translations on lupdate" OFF)
+
+set(_lupdate_opts "")
+
+if(SHOPPINGHAUER_LUPDATE_NO_OBSOLETE)
+    list(APPEND _lupdate_opts -no-obsolete)
+endif()
+
 qt_add_translations(${PROJECT_NAME}
     SOURCE_TARGETS ${PROJECT_NAME}
     NO_GENERATE_PLURALS_TS_FILE
     MERGE_QT_TRANSLATIONS
     TS_OUTPUT_DIRECTORY i18n
-    # LUPDATE_OPTIONS -no-obsolete
+    LUPDATE_OPTIONS ${_lupdate_opts}
 )
 
 # For visibility in IDE (e.g., Qt Creator)
