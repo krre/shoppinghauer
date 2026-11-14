@@ -90,13 +90,6 @@
     </message>
 </context>
 <context>
-    <name>OptionsMenu</name>
-    <message>
-        <source>About</source>
-        <translation type="vanished">О программе</translation>
-    </message>
-</context>
-<context>
     <name>OptionsMenuToolButton</name>
     <message>
         <location filename="../qml/main/OptionsMenuToolButton.qml" line="23"/>
@@ -255,10 +248,6 @@
 </context>
 <context>
     <name>TemplateProductsPage</name>
-    <message>
-        <source>Template</source>
-        <translation type="vanished">Шаблон</translation>
-    </message>
     <message>
         <location filename="../qml/pages/templates/TemplateProductsPage.qml" line="12"/>
         <source>Template products</source>
